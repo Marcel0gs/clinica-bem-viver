@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Abertura: uma vez por sessao, nunca com #ancora na URL. Com "reduzir movimento"
+     ela so dissolve. Quem ja viu ganha "pronto" aqui mesmo e a capa entra sem esperar. -->
+<script>
+(function(d){
+  d.className += " js";
+  var calma = false, visto = false;
+  try { calma = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e){}
+  try { visto = sessionStorage.getItem("bemviver-abertura") === "1"; } catch(e){}
+  if (!visto && !location.hash) d.className += calma ? " com-intro intro-calma" : " com-intro";
+  else d.className += " pronto";
+})(document.documentElement);
+</script>
+<title>Clínica Bem Viver | Psicologia, Fonoaudiologia, Fisioterapia e Nutrição em Ipatinga</title>
+<meta name="description" content="Centro integrado de saúde no Jardim Panorama, em Ipatinga/MG: psicologia adulto e infantil, avaliação neuropsicológica, fonoaudiologia infantil, fisioterapia e nutrição. Particular e convênios. Agende pelo WhatsApp.">
+<link rel="canonical" href="https://marcel0gs.github.io/clinica-bem-viver/">
+<meta name="theme-color" content="#F7F3EC">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Clínica Bem Viver">
+<meta property="og:title" content="Clínica Bem Viver | Centro Integrado de Saúde em Ipatinga">
+<meta property="og:description" content="Psicologia, avaliação neuropsicológica, fonoaudiologia infantil, fisioterapia e nutrição no mesmo endereço. Particular e convênios.">
+<meta property="og:url" content="https://marcel0gs.github.io/clinica-bem-viver/">
+<meta property="og:image" content="https://marcel0gs.github.io/clinica-bem-viver/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700;800&family=Quicksand:wght@500&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="preload" as="image" href="assets/img/capa-atendimento.webp" fetchpriority="high">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Clínica Bem Viver, Centro Integrado de Saúde",
+  "url": "https://marcel0gs.github.io/clinica-bem-viver/",
+  "image": "https://marcel0gs.github.io/clinica-bem-viver/assets/img/og.jpg",
+  "telephone": "+55 31 98913-4114",
+  "email": "bemviver-mg@hotmail.com",
+  "description": "Centro integrado de saúde em Ipatinga/MG: psicologia adulto e infantojuvenil, avaliação neuropsicológica, fonoaudiologia infantil, fisioterapia e nutrição. Particular e convênios.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua dos Caiapós, 15, Jardim Panorama",
+    "addressLocality": "Ipatinga",
+    "addressRegion": "MG",
+    "addressCountry": "BR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -19.4670815, "longitude": -42.5472612 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "18:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/sejabemviver/"]
+}
+</script>
+</head>
+<body class="com-hero">
+
+<!-- ===== abertura (remover: apagar este bloco, o CSS "ABERTURA" e o bloco 1 do site.js) ===== -->
+<div class="intro" id="intro">
+  <div class="intro__centro" aria-hidden="true">
+    <div class="intro__bolas"><span></span><span></span><span></span></div>
+    <svg class="intro__simbolo" viewBox="0 0 100 100">
+      <path class="intro__traco" pathLength="1" d="M10 33C24 45 40 47 50.5 55C60 62 61 81 50 89C39 81 40 62 49.5 55C60 47 76 45 90 33"/>
+      <circle class="intro__cabeca" cx="50" cy="17" r="9"/>
+    </svg>
+    <p class="intro__nome"><span style="--l:0">b</span><span style="--l:1">e</span><span style="--l:2">m</span><span style="--l:3">v</span><span style="--l:4">i</span><span style="--l:5">v</span><span style="--l:6">e</span><span style="--l:7">r</span></p>
+    <p class="intro__sub">Centro integrado de saúde</p>
+  </div>
+  <button class="intro__pular" type="button">Pular</button>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bv-simbolo" viewBox="0 0 100 100"><circle cx="50" cy="17" r="9"/><path d="M10 33C24 45 40 47 50.5 55C60 62 61 81 50 89C39 81 40 62 49.5 55C60 47 76 45 90 33"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.8 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3ZM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-email" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-cerebro" viewBox="0 0 24 24"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></symbol>
+  <symbol id="i-poltrona" viewBox="0 0 24 24"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/></symbol>
+  <symbol id="i-sorriso" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.472 15a6 6 0 01-8.943 0"/><path d="M9 10V9"/><path d="M15 10V9"/></symbol>
+  <symbol id="i-fala" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z"/></symbol>
+  <symbol id="i-corpo" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></symbol>
+  <symbol id="i-maca" viewBox="0 0 24 24"><path d="M12 6.528V3a1 1 0 0 1 1-1h0"/><path d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M12.127 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5.125"/><path d="M14.62 17.8A2.25 2.25 0 1 1 18 14.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z"/><path d="M16 2v3"/><path d="M3 9h18"/><path d="M8 2v3"/></symbol>
+  <symbol id="i-maos" viewBox="0 0 24 24"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></symbol>
+  <symbol id="i-rosto" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></symbol>
+  <symbol id="i-aspas" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></symbol>
+</svg>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="wrap topo__linha">
+    <a class="marca" href="./" aria-label="Clínica Bem Viver, página inicial">
+      <svg class="marca__simbolo" viewBox="0 0 100 100" aria-hidden="true"><use href="#bv-simbolo"/></svg>
+      <span class="marca__texto"><span class="marca__nome">bemviver</span><span class="marca__sub">Centro integrado de saúde</span></span>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#especialidades">Especialidades</a>
+      <a href="#comecar">Por onde começar</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#convenios">Convênios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn topo__cta" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Bem%20Viver%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg><span>Agendar<span class="cta-mais"> pelo WhatsApp</span></span></a>
+    <button class="menu-btn" type="button" aria-label="Abrir menu" aria-controls="gaveta" aria-expanded="false"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div class="gaveta" id="gaveta">
+  <nav class="gaveta__painel" aria-label="Menu">
+    <button class="menu-btn gaveta__fechar" type="button" aria-label="Fechar menu"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <a href="#especialidades">Especialidades</a>
+    <a href="#comecar">Por onde começar</a>
+    <a href="#espaco">O espaço</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#convenios">Convênios</a>
+    <a href="#contato">Contato</a>
+    <p class="gaveta__grupo">Páginas</p>
+    <a href="especialidades/psicologia-adulto/">Psicologia adulto</a>
+    <a href="especialidades/psicologia-infantil/">Psicologia infantojuvenil</a>
+    <a href="especialidades/avaliacao-neuropsicologica/">Avaliação neuropsicológica</a>
+    <a href="especialidades/fonoaudiologia-infantil/">Fonoaudiologia infantil</a>
+    <a href="especialidades/reabilitacao-orofacial/">Reabilitação orofacial</a>
+    <a href="especialidades/fisioterapia/">Fisioterapia</a>
+    <a href="especialidades/nutricao/">Nutrição</a>
+    <a class="btn" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Bem%20Viver%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg>Agendar pelo WhatsApp</a>
+  </nav>
+</div>
+
+<main id="conteudo">
+
+<!-- ================= CAPA =================
+     A metade direita e das salas: as fotos reais passam sozinhas (zoom lento,
+     legenda, barrinhas clicaveis) e param com o cursor em cima. -->
+<section class="hero capa" aria-labelledby="titulo">
+  <div class="pontos" data-pontos aria-hidden="true">
+    <span class="ponto" data-px=".12" style="--x:5%;--y:16%;--t:14px;--c:var(--rosa);--d:6s"><i></i></span>
+    <span class="ponto" data-px=".22" style="--x:40%;--y:10%;--t:20px;--c:var(--mel);--d:8s"><i></i></span>
+    <span class="ponto" data-px=".08" style="--x:44%;--y:84%;--t:12px;--c:var(--folha);--d:7s"><i></i></span>
+    <span class="ponto" data-px=".2" style="--x:3%;--y:72%;--t:24px;--c:var(--folha);--d:8.5s"><i></i></span>
+    <span class="ponto" data-px=".14" style="--x:30%;--y:93%;--t:16px;--c:var(--rosa);--d:7s"><i></i></span>
+    <span class="ponto" data-px=".16" style="--x:22%;--y:6%;--t:11px;--c:var(--folha);--d:8s"><i></i></span>
+    <span class="ponto" data-px=".28" style="--x:13%;--y:91%;--t:10px;--c:var(--mel);--d:8s"><i></i></span>
+  </div>
+
+  <span class="capa__moldura" data-px=".04" aria-hidden="true"></span>
+  <div class="capa__fotos" data-capa>
+    <figure class="capa__slide ativo" data-nome="Sala de atendimento"><img src="assets/img/capa-atendimento.webp" width="900" height="1250" fetchpriority="high" decoding="async" alt="Sala de atendimento com duas poltronas, estante de livros e uma planta"></figure>
+    <figure class="capa__slide" data-nome="Sala de fonoaudiologia"><img src="assets/img/capa-fono.webp" width="720" height="900" decoding="async" alt="Sala de fonoaudiologia com parede verde, armários brancos e bonecos numa prateleira"></figure>
+    <figure class="capa__slide" data-nome="Sala infantil"><img src="assets/img/capa-brinquedos.webp" width="900" height="1125" decoding="async" alt="Tapete colorido e brinquedos da sala infantil"></figure>
+    <figure class="capa__slide" data-nome="Sala de fisioterapia"><img src="assets/img/capa-fisio.webp" width="900" height="1250" decoding="async" alt="Sala de fisioterapia com maca, quadros de exercícios e aparelho"></figure>
+    <div class="capa__barra">
+      <p class="capa__legenda" aria-live="polite"><span class="capa__num" data-capa-num>01</span><span data-capa-nome>Sala de atendimento</span></p>
+      <div class="capa__pontos">
+        <button class="capa__ponto ativo" type="button" aria-label="Ver sala de atendimento" aria-pressed="true"><i></i></button>
+        <button class="capa__ponto" type="button" aria-label="Ver sala de fonoaudiologia" aria-pressed="false"><i></i></button>
+        <button class="capa__ponto" type="button" aria-label="Ver sala infantil" aria-pressed="false"><i></i></button>
+        <button class="capa__ponto" type="button" aria-label="Ver sala de fisioterapia" aria-pressed="false"><i></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="capa__nota" data-px=".1" aria-hidden="true">
+    <b>5,0</b>
+    <div><span class="compo__estrelas"><svg class="ic"><use href="#i-estrela"/></svg><svg class="ic"><use href="#i-estrela"/></svg><svg class="ic"><use href="#i-estrela"/></svg><svg class="ic"><use href="#i-estrela"/></svg><svg class="ic"><use href="#i-estrela"/></svg></span><span>25 avaliações no Google</span></div>
+  </div>
+
+  <div class="wrap hero__grade">
+    <div class="hero__texto">
+      <p class="olho">Centro integrado de saúde · Ipatinga</p>
+      <h1 id="titulo">Cada história <em>importa</em>.</h1>
+      <p class="hero__sub">Psicologia para adultos e crianças, avaliação neuropsicológica, fonoaudiologia infantil, fisioterapia e nutrição no mesmo endereço, no Jardim Panorama. Particular e por convênio.</p>
+      <div class="hero__acoes">
+        <a class="btn" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Bem%20Viver%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg>Agendar pelo WhatsApp</a>
+        <a class="btn btn--vazado" href="#comecar">Não sei por onde começar</a>
+      </div>
+      <ul class="hero__fatos">
+        <li class="fato"><svg class="ic estrela" aria-hidden="true"><use href="#i-estrela"/></svg>5,0 no Google · 25 avaliações</li>
+        <li class="fato"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>8 convênios</li>
+        <li class="fato"><svg class="ic" aria-hidden="true"><use href="#i-relogio"/></svg>Seg. a sex., das 8h às 17h</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- frase da própria clínica, correndo devagar -->
+<div class="faixa">
+  <p class="sr">Cuidar é estar presente. Cada pequeno progresso é celebrado.</p>
+  <div class="faixa__trilho" aria-hidden="true">
+    <span class="faixa__item">Cuidar é estar presente</span>
+    <span class="faixa__item">Cada pequeno progresso é celebrado</span>
+    <span class="faixa__item">Ouvir com atenção, acolher com respeito</span>
+    <span class="faixa__item">Aqui, o cuidado é compromisso diário</span>
+    <span class="faixa__item">Cuidar é estar presente</span>
+    <span class="faixa__item">Cada pequeno progresso é celebrado</span>
+    <span class="faixa__item">Ouvir com atenção, acolher com respeito</span>
+    <span class="faixa__item">Aqui, o cuidado é compromisso diário</span>
+  </div>
+</div>
+
+<!-- ================= ESPECIALIDADES ================= -->
+<section class="secao" id="especialidades" aria-labelledby="t-esp">
+  <div class="wrap">
+    <div class="secao__cab" data-rev>
+      <p class="olho">Especialidades</p>
+      <h2 id="t-esp">Sete frentes de cuidado, <em>uma recepção só</em></h2>
+      <p>Atendimento multiprofissional, com cuidado integrado e fundamentado, respeitando as particularidades de cada fase da vida. Cada especialidade tem a sua página, com o que observar e como é o atendimento.</p>
+    </div>
+    <div class="esp" data-rev-grupo>
+      <a class="esp__card tom-folha" href="especialidades/psicologia-adulto/" data-rev>
+        <span class="esp__icone"><svg class="ic" aria-hidden="true"><use href="#i-poltrona"/></svg></span>
+        <h3>Psicologia adulto</h3>
+        <p class="esp__para">Para entender o que você está vivendo e cuidar disso com tempo e escuta.</p>
+        <ul class="esp__sinais"><li>Ansiedade e estresse</li><li>Luto, separação e fases difíceis</li><li>Menopausa e outras mudanças da vida</li></ul>
+        <p class="esp__quem">Carine Pinheiro de Andrade, psicóloga</p>
+        <span class="esp__ir">Conhecer <svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></span>
+      </a>
+      <a class="esp__card tom-rosa" href="especialidades/psicologia-infantil/" data-rev>
+        <span class="esp__icone"><svg class="ic" aria-hidden="true"><use href="#i-sorriso"/></svg></span>
+        <h3>Psicologia infantojuvenil</h3>
+        <p class="esp__para">Para crianças e adolescentes, com a família junto no cuidado.</p>
+        <ul class="esp__sinais"><li>Medos, birras e choro que atrapalham a rotina</li><li>Adaptação na escola e com os amigos</li><li>Ansiedade e isolamento na adolescência</li></ul>
+        <p class="esp__quem">Liliane Martins, psicóloga infantil, às sextas</p>
+        <span class="esp__ir">Conhecer <svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></span>
+      </a>
+      <a class="esp__card tom-mel" href="especialidades/avaliacao-neuropsicologica/" data-rev>
+        <span class="esp__icone"><svg class="ic" aria-hidden="true"><use href="#i-cerebro"/></svg></span>
+        <h3>Avaliação neuropsicológica</h3>
+        <p class="esp__para">Investiga como a pessoa presta atenção, lembra, aprende e se organiza.</p>
+        <ul class="esp__sinais"><li>Dificuldade de aprendizagem</li><li>Suspeita de TDAH ou TEA</li><li>Esquecimentos em adultos e idosos</li></ul>
+        <p class="esp__quem">Equipe de psicologia da clínica</p>
+        <span class="esp__ir">Conhecer <svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></span>
+      </a>
+      <a class="esp__card tom-folha" href="especialidades/fonoaudiologia-infantil/" data-rev>
+        <span class="esp__icone"><svg class="ic" aria-hidden="true"><use href="#i-fala"/></svg></span>
+        <h3>Fonoaudiologia infantil</h3>
+        <p class="esp__para">Para ajudar a desenvolver a comunicação do seu filho.</p>
+        <ul class="esp__sinais"><li>Fala atrasada ou difícil de entender</li><li>Comunicação alternativa (CAA)</li><li>Treinamento de CAA para famílias</li></ul>
+        <p class="esp__quem">Jussara Werner, fonoaudióloga</p>
+        <span class="esp__ir">Conhecer <svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></span>
+      </a>
+      <a class="esp__card tom-mel" href="especialidades/reabilitacao-orofacial/" data-rev>
+        <span class="esp__icone"><svg class="ic" aria-hidden="true"><use href="#i-rosto"/></svg></span>
+        <h3>Reabilitação orofacial</h3>
+        <p class="esp__para">Fonoaudiologia no pós-cirúrgico da ortognática e de outras cirurgias da face.</p>
+        <ul class="esp__sinais"><li>Mastigação e deglutição</li><li>Fala e respiração</li><li>Recuperação das funções orais</li></ul>
+        <p class="esp__quem">Rita de Cássia, fonoaudióloga</p>
+        <span class="esp__ir">Conhecer <svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></span>
+      </a>
+      <a class="esp__card tom-rosa" href="especialidades/fisioterapia/" data-rev>
+        <span class="esp__icone"><svg class="ic" aria-hidden="true"><use href="#i-corpo"/></svg></span>
+        <h3>Fisioterapia</h3>
+        <p class="esp__para">Com foco no cuidado funcional: movimento, alívio da dor e autonomia.</p>
+        <ul class="esp__sinais"><li>Dor na coluna e nas articulações</li><li>Recuperação de lesão ou cirurgia</li><li>Dificuldade nos movimentos do dia a dia</li></ul>
+        <p class="esp__quem">Simone, fisioterapeuta</p>
+        <span class="esp__ir">Conhecer <svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></span>
+      </a>
+      <a class="esp__card tom-mel" href="especialidades/nutricao/" data-rev>
+        <span class="esp__icone"><svg class="ic" aria-hidden="true"><use href="#i-maca"/></svg></span>
+        <h3>Nutrição</h3>
+        <p class="esp__para">Acompanhamento nutricional para todas as idades, também pelo convênio.</p>
+        <ul class="esp__sinais"><li>Exames alterados e controle do peso</li><li>Alimentação seletiva na infância</li><li>Uma rotina alimentar possível</li></ul>
+        <p class="esp__quem">Jordanya Malta, nutricionista</p>
+        <span class="esp__ir">Conhecer <svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></span>
+      </a>
+      <a class="esp__card esp__card--guia" href="#comecar" data-rev>
+        <span class="esp__icone"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#bv-simbolo"/></svg></span>
+        <h3>Não sabe qual escolher?</h3>
+        <p class="esp__para">Responda três perguntas rápidas e a gente indica por onde começar, com a mensagem para a recepção já pronta.</p>
+        <span class="esp__ir">Descobrir por onde começar <svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POR ONDE COMEÇAR ================= -->
+<section class="secao guia-sec" id="comecar" aria-labelledby="t-guia">
+  <svg class="guia-sec__simbolo" viewBox="0 0 100 100" aria-hidden="true"><use href="#bv-simbolo"/></svg>
+  <div class="wrap">
+    <div class="secao__cab" data-rev>
+      <p class="olho olho--claro">Por onde começar?</p>
+      <h2 id="t-guia">Não sabe qual especialidade procurar? <em>A gente ajuda.</em></h2>
+      <p>Três perguntas rápidas. No fim, a mensagem para a recepção sai pronta, com o que você precisa e o seu convênio.</p>
+    </div>
+
+    <form class="guia" data-guia data-base="" novalidate>
+      <div class="guia__passos">
+        <fieldset class="passo" data-passo="1">
+          <legend><span class="passo__n">1</span>Para quem é o cuidado?</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="quem" value="eu"><span>Para mim</span></label>
+            <label class="chip"><input type="radio" name="quem" value="filho"><span>Para meu filho ou filha</span></label>
+            <label class="chip"><input type="radio" name="quem" value="familiar"><span>Para outra pessoa da família</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="passo passo--espera" data-passo="2">
+          <legend><span class="passo__n">2</span>O que tem chamado sua atenção?</legend>
+          <p class="passo__dica">Pode marcar mais de um.</p>
+          <div class="chips" data-sinais></div>
+        </fieldset>
+        <fieldset class="passo passo--espera" data-passo="3">
+          <legend><span class="passo__n">3</span>Vai usar convênio?</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="conv" value="Particular"><span>Particular</span></label>
+            <label class="chip"><input type="radio" name="conv" value="Usisaúde"><span>Usisaúde</span></label>
+            <label class="chip"><input type="radio" name="conv" value="Vale"><span>Vale</span></label>
+            <label class="chip"><input type="radio" name="conv" value="Copasa"><span>Copasa</span></label>
+            <label class="chip"><input type="radio" name="conv" value="Cemig Saúde"><span>Cemig Saúde</span></label>
+            <label class="chip"><input type="radio" name="conv" value="Cenibra"><span>Cenibra</span></label>
+            <label class="chip"><input type="radio" name="conv" value="Cenibra Log"><span>Cenibra Log</span></label>
+            <label class="chip"><input type="radio" name="conv" value="Fundaffemg"><span>Fundaffemg</span></label>
+            <label class="chip"><input type="radio" name="conv" value="SulAmérica"><span>SulAmérica</span></label>
+            <label class="chip"><input type="radio" name="conv" value="Ainda não sei"><span>Ainda não sei</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <aside class="guia__res" data-res aria-live="polite"></aside>
+    </form>
+
+    <div class="sem-js-guia">
+      <a class="btn btn--claro" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Bem%20Viver%20e%20queria%20ajuda%20para%20saber%20qual%20especialidade%20procurar." target="_blank" rel="noopener"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg>Perguntar para a recepção</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TUDO NO MESMO ENDEREÇO ================= -->
+<section class="secao" aria-labelledby="t-junto" style="padding-bottom:0">
+  <div class="wrap">
+    <h2 id="t-junto" class="sr">Por que a clínica integrada facilita</h2>
+    <div class="junto" data-rev-grupo>
+      <div class="junto__item" data-rev>
+        <span class="junto__ic"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg></span>
+        <div><h3>Um agendamento só</h3><p>Psicologia, fono, fisioterapia e nutrição pelo mesmo WhatsApp, com a mesma recepção.</p></div>
+      </div>
+      <div class="junto__item" data-rev>
+        <span class="junto__ic"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <div><h3>Particular e convênios</h3><p>Oito convênios, entre eles Vale, Usisaúde, Cemig Saúde e SulAmérica. Confirme o seu ao agendar.</p></div>
+      </div>
+      <div class="junto__item" data-rev>
+        <span class="junto__ic"><svg class="ic" aria-hidden="true"><use href="#i-maos"/></svg></span>
+        <div><h3>Salas para cada idade</h3><p>Espaços pensados para criança e para adulto, com brinquedos, mesinhas e cores calmas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= O ESPAÇO ================= -->
+<section class="secao" id="espaco" aria-labelledby="t-espaco">
+  <div class="wrap">
+    <div class="secao__cab" data-rev>
+      <p class="olho">O espaço</p>
+      <h2 id="t-espaco">Salas pensadas para <em>cada idade</em></h2>
+      <p>Fotos da própria clínica, do jeito que ela é.</p>
+    </div>
+    <div class="espaco" data-rev-grupo>
+      <figure class="espaco__f espaco__f--fono" data-rev>
+        <img src="assets/img/sala-fono.webp" width="1400" height="788" loading="lazy" decoding="async" alt="Sala de fonoaudiologia com parede verde clara, mesa branca, brinquedos numa prateleira e quadros infantis">
+        <figcaption><b>Sala de fonoaudiologia</b>Brinquedos e figuras que entram na terapia infantil.</figcaption>
+      </figure>
+      <figure class="espaco__f espaco__f--psi" data-rev>
+        <img src="assets/img/sala-atendimento.webp" width="800" height="1067" loading="lazy" decoding="async" alt="Sala de atendimento com duas poltronas, mesinhas de madeira, estante de livros e uma planta">
+        <figcaption><b>Sala de atendimento</b>Poltronas, livros e luz calma para conversar com tempo.</figcaption>
+      </figure>
+      <figure class="espaco__f espaco__f--inf" data-rev>
+        <img src="assets/img/sala-infantil.webp" width="800" height="1067" loading="lazy" decoding="async" alt="Sala infantil com parede creme, dois quadros, mesinha branca e duas cadeirinhas">
+        <figcaption><b>Sala infantil</b>Mesinha e cadeiras do tamanho das crianças.</figcaption>
+      </figure>
+      <figure class="espaco__f espaco__f--fisio" data-rev>
+        <img src="assets/img/sala-fisio.webp" width="800" height="1067" loading="lazy" decoding="async" alt="Sala de fisioterapia com parede verde, maca, quadros de exercícios e aparelho de eletroterapia">
+        <figcaption><b>Sala de fisioterapia</b>Maca, aparelhos e espaço para os exercícios.</figcaption>
+      </figure>
+      <figure class="espaco__f espaco__f--logo" data-rev>
+        <img src="assets/img/logo-entrada.webp" width="1200" height="555" loading="lazy" decoding="async" alt="Painel de madeira na entrada com a logo da Bem Viver, centro integrado de saúde">
+        <figcaption><b>A entrada</b>Rua dos Caiapós, 15. Painel de madeira com a logo.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EQUIPE ================= -->
+<section class="secao" id="equipe" aria-labelledby="t-equipe" style="background:var(--papel)">
+  <div class="wrap">
+    <div class="secao__cab" data-rev>
+      <p class="olho">Equipe</p>
+      <h2 id="t-equipe">Quem cuida de <em>você</em></h2>
+      <p>Profissionais de áreas diferentes, no mesmo endereço.</p>
+    </div>
+    <div class="equipe" data-rev-grupo>
+      <article class="pessoa tom-folha" data-rev>
+        <div class="pessoa__foto"><img src="assets/img/eq-carine.webp" width="480" height="480" loading="lazy" decoding="async" alt="Carine Pinheiro de Andrade, sorrindo, de óculos"></div>
+        <h3>Carine Pinheiro de Andrade</h3>
+        <p class="pessoa__papel">Psicóloga</p>
+        <ul class="etiquetas"><li>Psicologia adulto</li><li>Avaliação neuropsicológica</li></ul>
+        <a class="pessoa__insta" href="https://www.instagram.com/carinepinheiropsi/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg>@carinepinheiropsi</a>
+      </article>
+      <article class="pessoa tom-rosa" data-rev>
+        <div class="pessoa__foto"><img src="assets/img/eq-liliane.webp" width="460" height="460" loading="lazy" decoding="async" alt="Liliane Martins, sorrindo, de blusa branca"></div>
+        <span class="pessoa__novo">Nova na equipe</span>
+        <h3>Liliane Martins</h3>
+        <p class="pessoa__papel">Psicóloga infantil</p>
+        <p>Atende crianças às sextas-feiras.</p>
+        <ul class="etiquetas"><li>Psicologia infantil</li></ul>
+      </article>
+      <article class="pessoa tom-folha" data-rev>
+        <div class="pessoa__foto"><img src="assets/img/eq-jussara.webp" width="410" height="410" loading="lazy" decoding="async" alt="Jussara Werner, sorrindo, de óculos"></div>
+        <h3>Jussara Werner</h3>
+        <p class="pessoa__papel">Fonoaudióloga infantil</p>
+        <p>Especialista em Linguagem pelo CFFa.</p>
+        <ul class="etiquetas"><li>CAA</li><li>PROMPT</li><li>DTTC</li><li>ReST</li><li>Babble Boot Camp</li></ul>
+        <a class="pessoa__insta" href="https://www.instagram.com/jussara_wernerfono/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg>@jussara_wernerfono</a>
+      </article>
+      <article class="pessoa tom-mel" data-rev>
+        <div class="pessoa__foto"><img src="assets/img/eq-rita.webp" width="390" height="390" loading="lazy" decoding="async" alt="Rita de Cássia, sorrindo, de óculos"></div>
+        <h3>Rita de Cássia</h3>
+        <p class="pessoa__papel">Fonoaudióloga · CRFa 15299</p>
+        <p>Reabilitação orofacial no pós-cirúrgico da ortognática. Especialista pelo CEFAC/SP.</p>
+        <ul class="etiquetas"><li>Eletroestimulação</li><li>Fotobiomodulação</li><li>Tapping</li><li>Ultrassom terapêutico</li></ul>
+      </article>
+      <article class="pessoa tom-mel" data-rev>
+        <div class="pessoa__foto"><img src="assets/img/eq-jordanya.webp" width="240" height="240" loading="lazy" decoding="async" alt="Jordanya Malta, sorrindo, de blusa verde"></div>
+        <h3>Jordanya Malta</h3>
+        <p class="pessoa__papel">Nutricionista</p>
+        <p>Nutrição clínica e pediátrica, para todas as idades, também pelo convênio.</p>
+        <a class="pessoa__insta" href="https://www.instagram.com/nutrijordanya/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg>@nutrijordanya</a>
+      </article>
+      <article class="pessoa tom-rosa" data-rev>
+        <div class="pessoa__foto"><span class="pessoa__mono"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#bv-simbolo"/></svg></span></div>
+        <h3>Simone</h3>
+        <p class="pessoa__papel">Fisioterapeuta</p>
+        <p>Fisioterapia com foco no cuidado funcional.</p>
+        <ul class="etiquetas"><li>Fisioterapia</li></ul>
+      </article>
+      <article class="pessoa pessoa--caa" data-rev>
+        <p class="olho olho--claro">Para famílias</p>
+        <h3>Treinamento em CAA para pais e familiares</h3>
+        <p>Com a fono Jussara Werner: um encontro prático para entender a Comunicação Aumentativa e Alternativa e usar no dia a dia com a criança.</p>
+        <a class="btn btn--claro" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20queria%20saber%20da%20pr%C3%B3xima%20turma%20do%20treinamento%20de%20CAA%20para%20pais%20e%20familiares." target="_blank" rel="noopener">Perguntar pela próxima turma</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONVÊNIOS ================= -->
+<section class="secao" id="convenios" aria-labelledby="t-conv">
+  <div class="wrap conv">
+    <div data-rev>
+      <p class="olho">Convênios</p>
+      <h2 id="t-conv" style="font-size:clamp(2rem,4.2vw,3.1rem);margin:.9rem 0 1rem">Particular e por <em style="color:var(--petroleo)">convênio</em></h2>
+      <p style="color:var(--tinta-suave);font-size:1.1rem;margin-bottom:1.6rem">A clínica atende pelos convênios ao lado, conforme as regras de cada operadora. Na dúvida, mande o nome do seu plano e a recepção confere.</p>
+      <a class="btn btn--vazado" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Queria%20conferir%20se%20a%20cl%C3%ADnica%20atende%20pelo%20meu%20conv%C3%AAnio%3A%20" target="_blank" rel="noopener"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg>Conferir meu convênio</a>
+    </div>
+    <div data-rev>
+      <ul class="conv__lista">
+        <li>Usisaúde</li><li>Vale</li><li>Copasa</li><li>Cemig Saúde</li><li>Cenibra</li><li>Cenibra Log</li><li>Fundaffemg</li><li>SulAmérica</li>
+        <li class="conv__parceria"><span><small>Parceria</small>AAPI</span></li>
+      </ul>
+      <p class="conv__nota">Convênios sujeitos às normas de cada operadora.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVALIAÇÕES ================= -->
+<section class="secao aval-sec" aria-labelledby="t-aval">
+  <div class="wrap">
+    <div class="secao__cab" data-rev>
+      <p class="olho">Avaliações</p>
+      <h2 id="t-aval">O que dizem <em>no Google</em></h2>
+    </div>
+    <div class="aval" data-rev-grupo>
+      <div class="aval__nota" data-rev>
+        <b>5,0</b>
+        <span class="compo__estrelas" aria-label="Cinco estrelas"><svg class="ic"><use href="#i-estrela"/></svg><svg class="ic"><use href="#i-estrela"/></svg><svg class="ic"><use href="#i-estrela"/></svg><svg class="ic"><use href="#i-estrela"/></svg><svg class="ic"><use href="#i-estrela"/></svg></span>
+        <p>Nota média em 25 avaliações de pacientes no Google.</p>
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJbRgieiYAsAARdGVI1Ykbbo4" target="_blank" rel="noopener">Ver todas no Google</a>
+      </div>
+      <figure class="depo" data-rev>
+        <svg class="depo__aspas" aria-hidden="true"><use href="#i-aspas"/></svg>
+        <blockquote>Experiência de satisfação ha muitos anos sou cliente desta clínica ótimo atendimento profissionais de alto nível so tenho que agradecer sempre foi muito bem acolhido parabéns</blockquote>
+        <figcaption>Marcos J. <span>· no Google</span></figcaption>
+      </figure>
+      <figure class="depo" data-rev>
+        <svg class="depo__aspas" aria-hidden="true"><use href="#i-aspas"/></svg>
+        <blockquote>Uma clínica espetacular, onde você é bem recebido na entrada, com um sorriso acolhedor da secretaria. Todos muito educados e atenciosos. (…)</blockquote>
+        <figcaption>Mary M. <span>· no Google</span></figcaption>
+      </figure>
+      <figure class="depo" data-rev>
+        <svg class="depo__aspas" aria-hidden="true"><use href="#i-aspas"/></svg>
+        <blockquote>A mais de um ano fazendo acompanhamento na clínica bem viver, só tenho o que agradecer pelo atendimento de sempre de todos os profissionais. obrigada 🙏🏼</blockquote>
+        <figcaption>Eliane R. <span>· no Google</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="secao" id="contato" aria-labelledby="t-contato">
+  <div class="wrap contato">
+    <div data-rev>
+      <p class="olho">Onde estamos</p>
+      <h2 id="t-contato" style="font-size:clamp(2rem,4.2vw,3.1rem);margin:.9rem 0 .6rem">Rua dos Caiapós, 15, <em style="color:var(--petroleo)">Jardim Panorama</em></h2>
+      <p style="color:var(--tinta-suave)">Em Ipatinga/MG. Procure o painel de madeira com a logo da Bem Viver.</p>
+      <ul class="contato__lista">
+        <li><span class="contato__ic"><svg class="ic" aria-hidden="true"><use href="#i-relogio"/></svg></span>
+          <div><b>Horário</b><span data-agora></span>
+            <table class="horas" data-horas>
+              <tr data-dia="1 2 4 5"><td>Seg., ter., qui. e sex.</td><td>8h às 17h</td></tr>
+              <tr data-dia="3"><td>Quarta-feira</td><td>8h às 18h</td></tr>
+              <tr data-dia="6 0"><td>Sábado e domingo</td><td>Fechado</td></tr>
+            </table>
+          </div></li>
+        <li><span class="contato__ic"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg></span>
+          <div><b>WhatsApp</b><a href="https://wa.me/5531989134114" target="_blank" rel="noopener">(31) 98913-4114</a></div></li>
+        <li><span class="contato__ic"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg></span>
+          <div><b>Instagram</b><a href="https://www.instagram.com/sejabemviver/" target="_blank" rel="noopener">@sejabemviver</a></div></li>
+        <li><span class="contato__ic"><svg class="ic" aria-hidden="true"><use href="#i-email"/></svg></span>
+          <div><b>E-mail</b><a href="mailto:bemviver-mg@hotmail.com">bemviver-mg@hotmail.com</a></div></li>
+      </ul>
+      <div class="contato__acoes">
+        <a class="btn" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Bem%20Viver%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg>Agendar pelo WhatsApp</a>
+        <a class="btn btn--vazado" href="https://www.google.com/maps/search/?api=1&amp;query=Cl%C3%ADnica%20Bem%20Viver%20Ipatinga&amp;query_place_id=ChIJbRgieiYAsAARdGVI1Ykbbo4" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Como chegar</a>
+      </div>
+    </div>
+    <figure class="contato__foto" data-rev>
+      <img src="assets/img/fachada.webp" width="1200" height="495" loading="lazy" decoding="async" alt="Fachada da Clínica Bem Viver na Rua dos Caiapós, com painel de madeira, a logo e o número 15">
+      <figcaption><b>Fachada de madeira com a logo, nº 15.</b> A entrada fica ao lado da placa com as especialidades.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= CHAMADA FINAL ================= -->
+<section class="secao chamada" aria-labelledby="t-final">
+  <svg class="chamada__simbolo" viewBox="0 0 100 100" aria-hidden="true"><use href="#bv-simbolo"/></svg>
+  <div class="wrap" data-rev>
+    <p class="olho olho--claro" style="justify-content:center">Clínica Bem Viver</p>
+    <h2 id="t-final">Cuidar é estar presente.</h2>
+    <p>Conte para a recepção o que você precisa. A equipe ajuda a encontrar por onde começar.</p>
+    <div class="acoes">
+      <a class="btn btn--claro" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Bem%20Viver%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg>Agendar pelo WhatsApp</a>
+      <a class="btn btn--linha-clara" href="#especialidades">Ver especialidades</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAPA ================= -->
+<section class="mapa" aria-labelledby="t-mapa">
+  <h2 id="t-mapa" class="sr">Mapa</h2>
+  <iframe class="mapa__frame" title="Mapa da Clínica Bem Viver, na Rua dos Caiapós, 15, em Ipatinga" src="https://maps.google.com/maps?q=Cl%C3%ADnica%20Bem%20Viver%20Centro%20Integrado%20de%20Sa%C3%BAde%20Ipatinga&amp;z=17&amp;hl=pt-BR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  <div class="wrap mapa__wrap">
+    <div class="mapa__cartao">
+      <p class="olho">Como chegar</p>
+      <b>Rua dos Caiapós, 15</b>
+      <span>Jardim Panorama, Ipatinga/MG</span>
+      <small>Fachada de madeira com a logo da Bem Viver.</small>
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cl%C3%ADnica%20Bem%20Viver%20Ipatinga&amp;destination_place_id=ChIJbRgieiYAsAARdGVI1Ykbbo4" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Traçar rota</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape__grade">
+      <div>
+        <a class="marca" href="./" aria-label="Clínica Bem Viver, página inicial">
+          <svg class="marca__simbolo" viewBox="0 0 100 100" aria-hidden="true"><use href="#bv-simbolo"/></svg>
+          <span class="marca__texto"><span class="marca__nome">bemviver</span><span class="marca__sub">Centro integrado de saúde</span></span>
+        </a>
+        <p>Psicologia, avaliação neuropsicológica, fonoaudiologia, fisioterapia e nutrição em Ipatinga/MG. Particular e convênios.</p>
+      </div>
+      <div>
+        <h2>Especialidades</h2>
+        <ul>
+          <li><a href="especialidades/psicologia-adulto/">Psicologia adulto</a></li>
+          <li><a href="especialidades/psicologia-infantil/">Psicologia infantojuvenil</a></li>
+          <li><a href="especialidades/avaliacao-neuropsicologica/">Avaliação neuropsicológica</a></li>
+          <li><a href="especialidades/fonoaudiologia-infantil/">Fonoaudiologia infantil</a></li>
+          <li><a href="especialidades/reabilitacao-orofacial/">Reabilitação orofacial</a></li>
+          <li><a href="especialidades/fisioterapia/">Fisioterapia</a></li>
+          <li><a href="especialidades/nutricao/">Nutrição</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contato</h2>
+        <ul>
+          <li>Rua dos Caiapós, 15, Jardim Panorama, Ipatinga/MG</li>
+          <li><a href="https://wa.me/5531989134114" target="_blank" rel="noopener">WhatsApp (31) 98913-4114</a></li>
+          <li><a href="https://www.instagram.com/sejabemviver/" target="_blank" rel="noopener">@sejabemviver</a></li>
+          <li><a href="mailto:bemviver-mg@hotmail.com">bemviver-mg@hotmail.com</a></li>
+          <li>Seg. a sex., 8h às 17h (quarta até 18h)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape__base">
+      <span>© 2026 Clínica Bem Viver · Centro Integrado de Saúde</span>
+      <span>Convênios sujeitos às normas de cada operadora.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Bem%20Viver%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp"><svg class="zap-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-zap"/></svg></a>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
