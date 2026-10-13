@@ -666,22 +666,10 @@ html:not(.js) .sem-js-guia{display:block}
 .rodape a:hover{text-decoration:underline}
 .rodape__base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.1);font-size:.84rem;color:#94A89F}
 
-/* ---------------- mapa, no fim da página ---------------- */
-.mapa{position:relative;z-index:1;background:var(--areia);padding-bottom:2rem}
-.mapa__frame{display:block;width:100%;height:clamp(340px,50vh,480px);border:0;filter:saturate(.85)}
-.mapa__cartao{
-  position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;max-width:380px;
-  margin-top:-64px;padding:1.4rem 1.5rem;border-radius:var(--raio);background:var(--papel);box-shadow:var(--sombra-forte);
-}
-.mapa__cartao b{font:600 1.4rem/1.2 var(--serif);color:var(--petroleo-escuro);margin-top:.4rem}
-.mapa__cartao span{color:var(--tinta-suave)}
-.mapa__cartao small{color:var(--tinta-suave);font-size:.86rem;margin-bottom:.6rem}
-@media (min-width:860px){
-  .mapa{padding-bottom:0}
-  .mapa__wrap{position:absolute;inset:0;pointer-events:none}
-  /* à direita: o canto esquerdo do mapa é do cartão do próprio Google */
-  .mapa__cartao{position:absolute;right:0;top:50%;transform:translateY(-50%);margin:0;pointer-events:auto}
-}
+/* ---------------- mapa, embaixo da fachada no "Onde estamos" (pedido dele) ---------------- */
+.contato__lado{display:grid;gap:1.2rem}
+.contato__mapa{border-radius:28px;overflow:hidden;box-shadow:var(--sombra-forte);background:var(--areia);border:6px solid var(--papel)}
+.contato__mapa iframe{display:block;width:100%;height:clamp(300px,30vw,420px);border:0;filter:saturate(.85)}
 
 /* ---------------- cursor: as três bolinhas da marca seguindo o mouse ----------------
    Só com mouse de verdade (pointer: fine) e sem "reduzir movimento". O cursor
