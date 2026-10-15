@@ -509,6 +509,14 @@ html:not(.js) .sem-js-guia{display:block}
 .pessoa p{font-size:.95rem;color:var(--tinta-suave)}
 .etiquetas{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none}
 .etiquetas li{font-size:.78rem;font-weight:700;padding:.3rem .65rem;border-radius:99px;background:var(--tom-fundo);color:var(--petroleo-escuro)}
+/* a frase de cada profissional, tirada do card oficial dela (14/10/2026) */
+.pessoa__frase{font:italic 500 1.08rem/1.45 var(--serif);color:var(--petroleo)!important;margin-top:-.15rem}
+/* celular: oito pessoas empilhadas viravam uma parede; agora e trilho de arrastar */
+@media (max-width:639px){
+  .equipe{grid-auto-flow:column;grid-auto-columns:86%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;-webkit-overflow-scrolling:touch}
+  .equipe > .pessoa{scroll-snap-align:start}
+}
+.quem-atende + .quem-atende{margin-top:2.4rem;padding-top:2.4rem;border-top:1px solid var(--linha)}
 .pessoa__insta{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.9rem;text-decoration:none;margin-top:auto}
 .pessoa__insta:hover{text-decoration:underline}
 .pessoa__novo{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .6rem;border-radius:99px;background:var(--rosa);color:var(--noite)}
@@ -709,8 +717,35 @@ html:not(.js) .sem-js-guia{display:block}
 .js [data-rev]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--suave),transform .9s var(--suave);transition-delay:calc(var(--o,0) * 90ms)}
 .js [data-rev].rev-ok{opacity:1;transform:none}
 
+/* ---------------- carrossel do Instagram ----------------
+   Posts reais, cada um abre o proprio post. A pista anda -50% (dois trilhos
+   iguais) e para com o cursor em cima ou com o foco do teclado. */
+.ig{position:relative;overflow:hidden;padding:.6rem 0 1.6rem;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.ig__pista{display:flex;width:max-content;animation:igrola 70s linear infinite}
+.ig:hover .ig__pista,.ig:focus-within .ig__pista{animation-play-state:paused}
+@keyframes igrola{to{transform:translateX(-50%)}}
+.ig__trilho{display:flex;gap:1rem;margin:0;padding:0 .5rem;list-style:none}
+.ig__post{position:relative;display:block;width:clamp(190px,21vw,270px);aspect-ratio:4/5;border-radius:var(--raio);overflow:hidden;
+  background:var(--areia);box-shadow:var(--sombra);transition:transform .5s var(--suave),box-shadow .5s ease}
+.ig__post img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--suave)}
+.ig__post::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,48,45,0) 40%,rgba(22,48,45,.72));opacity:0;transition:opacity .4s ease}
+.ig__marca{position:absolute;top:.7rem;right:.7rem;z-index:1;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(22,48,45,.5);color:#fff}
+.ig__marca .ic{width:16px;height:16px}
+.ig__ver{position:absolute;left:0;right:0;bottom:1.1rem;z-index:1;display:flex;justify-content:center;align-items:center;gap:.45rem;
+  font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s var(--suave)}
+.ig__ver .ic{width:16px;height:16px}
+.ig__post:hover,.ig__post:focus-visible{transform:translateY(-6px);box-shadow:var(--sombra-forte)}
+.ig__post:hover img,.ig__post:focus-visible img{transform:scale(1.06)}
+.ig__post:hover::after,.ig__post:focus-visible::after{opacity:1}
+.ig__post:hover .ig__ver,.ig__post:focus-visible .ig__ver{opacity:1;transform:none}
+.ig__seguir{display:flex;justify-content:center}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  .ig{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .ig__pista{animation:none}
+  .ig__trilho + .ig__trilho{display:none}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .js [data-rev]{opacity:1;transform:none}
   .faixa__trilho{animation:none}
