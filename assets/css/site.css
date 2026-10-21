@@ -614,8 +614,8 @@ html:not(.js) .sem-js-guia{display:block}
 .pag-topo__foto{position:relative;margin:0 auto;width:min(460px,100%)}
 .pag-topo__foto .moldura{position:relative;overflow:hidden;border-radius:999px 999px 28px 28px;border:7px solid var(--papel);box-shadow:var(--sombra-forte);aspect-ratio:3/3.7;background:var(--areia)}
 .pag-topo__foto img{width:100%;height:100%;object-fit:cover}
-/* sem foto da sala (fisioterapia, nutrição): o símbolo da clínica no lugar,
-   em vez de foto de banco ou de IA posando de clínica */
+/* sem foto: o símbolo da clínica no lugar (hoje nenhuma página usa). Foto de
+   banco só quando não posa de sala nem de equipe (a da orofacial); IA nunca */
 .pag-topo__foto .moldura--simbolo{display:grid;place-items:center;background:radial-gradient(circle at 50% 38%,var(--tom-fundo,var(--folha-fundo)) 0 45%,var(--areia) 100%)}
 .moldura--simbolo svg{width:64%;fill:none;stroke:var(--petroleo);stroke-width:3.2;stroke-linecap:round}
 .pag-topo__foto .pontos{z-index:2}
