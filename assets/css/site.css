@@ -543,12 +543,25 @@ html:not(.js) .sem-js-guia{display:block}
 .conv__lista{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;list-style:none}
 @media (min-width:560px){.conv__lista{grid-template-columns:repeat(3,1fr)}}
 .conv__lista li{
-  display:grid;place-items:center;text-align:center;min-height:78px;padding:.8rem;border-radius:18px;
-  background:var(--papel);border:1px solid var(--linha);font:800 1.02rem/1.2 var(--sans);color:var(--petroleo-escuro);letter-spacing:.01em;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;text-align:center;min-height:78px;padding:1rem .7rem .85rem;border-radius:18px;
+  background:var(--papel);border:1px solid var(--linha);font:800 .92rem/1.2 var(--sans);color:var(--petroleo-escuro);letter-spacing:.01em;
   transition:transform .35s var(--mola),box-shadow .35s;
 }
 .conv__lista li:hover{transform:translateY(-3px);box-shadow:var(--sombra)}
-.conv__lista .conv__parceria{background:var(--petroleo);color:var(--creme);border-color:var(--petroleo)}
+/* Logo + nome escrito (27/10/2026), o mesmo esquema da Realce. O nome fica em
+   texto porque é ele que indexa "fisioterapia Usisaúde Ipatinga"; por isso o
+   alt da logo é vazio. Cada logo tem proporção diferente (Cenibra é quadrada,
+   Fundaffemg quase cinco vezes mais larga que alta), então o tamanho vem por
+   logo em --lw/--lh, no olho, pra todas pesarem igual.
+   ⚠️ A img é absoluta de propósito: só assim o max-height em % conta sobre a
+   caixa, que tem altura fixa. Como item de flex o % não tem onde se apoiar. */
+.conv__logo{position:relative;width:100%;height:46px}
+@media (min-width:560px){.conv__logo{height:54px}}
+.conv__logo img{position:absolute;inset:0;margin:auto;width:auto;height:auto;max-width:var(--lw,78%);max-height:var(--lh,100%)}
+/* Sem logo da AAPI publicada em lugar nenhum: o card de parceria segue em texto,
+   e no celular ocupa a linha inteira pra fechar a grade de nove. */
+.conv__lista .conv__parceria{background:var(--petroleo);color:var(--creme);border-color:var(--petroleo);font-size:1.02rem}
+@media (max-width:559px){.conv__lista .conv__parceria{grid-column:1 / -1}}
 .conv__lista .conv__parceria small{display:block;font-weight:700;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mel);margin-bottom:.15rem}
 .conv__nota{font-size:.88rem;color:var(--tinta-suave);margin-top:1rem}
 
