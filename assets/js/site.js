@@ -293,41 +293,43 @@
   if (guia) {
     var base = guia.getAttribute("data-base") || "";
     var ESP = {
-      "psi-adulto":   { nome: "Psicologia adulto", quem: "Com a psicóloga Carine Pinheiro de Andrade", url: "especialidades/psicologia-adulto/", ic: "i-poltrona" },
-      "psi-infantil": { nome: "Psicologia infantojuvenil", quem: "Com a psicóloga infantil Liliane Martins, às sextas", url: "especialidades/psicologia-infantil/", ic: "i-sorriso" },
+      "psi-adulto":   { nome: "Psicologia adulto", quem: "Com a psicóloga Carine Pinheiro de Andrade", url: "especialidades/psicologia-adulto/", ic: "i-poltrona", foto: "eq-carine" },
+      "psi-infantil": { nome: "Psicologia infantojuvenil", quem: "Com a psicóloga infantil Liliane Martins, às sextas", url: "especialidades/psicologia-infantil/", ic: "i-sorriso", foto: "eq-liliane" },
       "neuro":        { nome: "Avaliação neuropsicológica", quem: "Investiga atenção, memória, linguagem e aprendizagem", url: "especialidades/avaliacao-neuropsicologica/", ic: "i-cerebro" },
-      "fono":         { nome: "Fonoaudiologia infantil", quem: "Com a fonoaudióloga Jussara Werner", url: "especialidades/fonoaudiologia-infantil/", ic: "i-fala" },
-      "orofacial":    { nome: "Reabilitação orofacial", quem: "Com a fonoaudióloga Rita de Cássia", url: "especialidades/reabilitacao-orofacial/", ic: "i-rosto" },
-      "fisio":        { nome: "Fisioterapia", quem: "Com a fisioterapeuta Simone", url: "especialidades/fisioterapia/", ic: "i-corpo" },
-      "nutri":        { nome: "Nutrição", quem: "Com a nutricionista Jordanya Malta", url: "especialidades/nutricao/", ic: "i-maca" }
+      "fono":         { nome: "Fonoaudiologia infantil", quem: "Com a fonoaudióloga Jussara Werner", url: "especialidades/fonoaudiologia-infantil/", ic: "i-fala", foto: "eq-jussara" },
+      "orofacial":    { nome: "Reabilitação orofacial", quem: "Com a fonoaudióloga Rita de Cássia", url: "especialidades/reabilitacao-orofacial/", ic: "i-rosto", foto: "eq-rita" },
+      "fisio":        { nome: "Fisioterapia", quem: "Com a fisioterapeuta Simone", url: "especialidades/fisioterapia/", ic: "i-corpo", foto: "eq-simone" },
+      "nutri":        { nome: "Nutrição", quem: "Com a nutricionista Jordanya Malta", url: "especialidades/nutricao/", ic: "i-maca", foto: "eq-jordanya" }
     };
+    // 29/10/2026 (pedido dele: "mais visual"): cada sinal ganhou um ícone, o 4º item.
     var SINAIS = {
       adulto: [
-        ["a-ansiedade", "Ansiedade, tristeza ou estresse", ["psi-adulto"]],
-        ["a-fase", "Luto, separação ou uma fase difícil", ["psi-adulto"]],
-        ["a-menopausa", "Menopausa e as mudanças dessa fase", ["psi-adulto", "nutri"]],
-        ["a-memoria", "Esquecimentos ou dificuldade de concentração", ["neuro"]],
-        ["a-dor", "Dor na coluna, no pescoço ou nas articulações", ["fisio"]],
-        ["a-lesao", "Recuperação de lesão ou cirurgia", ["fisio"]],
-        ["a-peso", "Alimentação, peso ou exames alterados", ["nutri"]],
-        ["a-face", "Recuperação de cirurgia ortognática ou na face", ["orofacial"]]
+        ["a-ansiedade", "Ansiedade, tristeza ou estresse", ["psi-adulto"], "i-chuva"],
+        ["a-fase", "Luto, separação ou uma fase difícil", ["psi-adulto"], "i-coracao"],
+        ["a-menopausa", "Menopausa e as mudanças dessa fase", ["psi-adulto", "nutri"], "i-flor"],
+        ["a-memoria", "Esquecimentos ou dificuldade de concentração", ["neuro"], "i-cerebro"],
+        ["a-dor", "Dor na coluna, no pescoço ou nas articulações", ["fisio"], "i-osso"],
+        ["a-lesao", "Recuperação de lesão ou cirurgia", ["fisio"], "i-curativo"],
+        ["a-peso", "Alimentação, peso ou exames alterados", ["nutri"], "i-salada"],
+        ["a-face", "Recuperação de cirurgia ortognática ou na face", ["orofacial"], "i-rosto"]
       ],
       crianca: [
-        ["c-fala", "Fala pouco ou começou a falar tarde", ["fono"]],
-        ["c-sons", "Fala difícil de entender, troca ou omite sons", ["fono"]],
-        ["c-caa", "Ainda não fala e precisa de outro jeito de se comunicar", ["fono"]],
-        ["c-birra", "Medos, birras ou choro que atrapalham a rotina", ["psi-infantil"]],
-        ["c-mudou", "Mudou de comportamento depois de algo marcante", ["psi-infantil"]],
-        ["c-escola", "Dificuldade na escola: atenção, leitura ou memória", ["neuro", "psi-infantil"]],
-        ["c-tea", "A escola ou o médico falou em TEA ou TDAH", ["neuro", "psi-infantil", "fono"]],
-        ["c-come", "Come pouco, é muito seletivo ou tem o peso fora do esperado", ["nutri"]],
-        ["c-adolesc", "Ansiedade, tristeza ou isolamento na adolescência", ["psi-infantil"]]
+        ["c-fala", "Fala pouco ou começou a falar tarde", ["fono"], "i-balao"],
+        ["c-sons", "Fala difícil de entender, troca ou omite sons", ["fono"], "i-som"],
+        ["c-caa", "Ainda não fala e precisa de outro jeito de se comunicar", ["fono"], "i-formas"],
+        ["c-birra", "Medos, birras ou choro que atrapalham a rotina", ["psi-infantil"], "i-raio"],
+        ["c-mudou", "Mudou de comportamento depois de algo marcante", ["psi-infantil"], "i-mudou"],
+        ["c-escola", "Dificuldade na escola: atenção, leitura ou memória", ["neuro", "psi-infantil"], "i-livro"],
+        ["c-tea", "A escola ou o médico falou em TEA ou TDAH", ["neuro", "psi-infantil", "fono"], "i-quebra"],
+        ["c-come", "Come pouco, é muito seletivo ou tem o peso fora do esperado", ["nutri"], "i-talher"],
+        ["c-adolesc", "Ansiedade, tristeza ou isolamento na adolescência", ["psi-infantil"], "i-garoa"]
       ]
     };
     var PRA_QUEM = { eu: "para mim", filho: "para meu filho ou minha filha", familiar: "para uma pessoa da minha família" };
+    var ROTULO_QUEM = { eu: "Para mim", filho: "Para meu filho ou filha", familiar: "Para outra pessoa da família" };
 
     var caixaSinais = $("[data-sinais]", guia), res = $("[data-res]", guia);
-    var passo2 = $('[data-passo="2"]', guia), passo3 = $('[data-passo="3"]', guia);
+    var passo1 = $('[data-passo="1"]', guia), passo2 = $('[data-passo="2"]', guia), passo3 = $('[data-passo="3"]', guia);
     var marcados = {};
 
     var quem = function () { var r = $('input[name="quem"]:checked', guia); return r ? r.value : ""; };
@@ -337,8 +339,9 @@
       var q = quem();
       var lista = q === "filho" ? SINAIS.crianca : SINAIS.adulto;
       caixaSinais.innerHTML = lista.map(function (s) {
-        return '<label class="chip"><input type="checkbox" name="sinal" value="' + s[0] + '"' + (marcados[s[0]] ? " checked" : "") +
-          '><span>' + s[1] + "</span></label>";
+        return '<label class="chip chip--sinal"><input type="checkbox" name="sinal" value="' + s[0] + '"' + (marcados[s[0]] ? " checked" : "") +
+          '><span><i class="chip__ic"><svg class="ic" aria-hidden="true"><use href="#' + s[3] + '"/></svg></i>' + s[1] +
+          '<i class="chip__marca"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></i></span></label>';
       }).join("");
     };
 
@@ -356,13 +359,25 @@
       var q = quem(), sinais = escolhidos(), c = conv();
       passo2.classList.toggle("passo--espera", !q);
       passo3.classList.toggle("passo--espera", !sinais.length);
+      passo1.classList.toggle("passo--feito", !!q);
+      passo2.classList.toggle("passo--feito", !!sinais.length);
+      passo3.classList.toggle("passo--feito", !!c);
 
       if (!q || !sinais.length) {
+        // a trilha mostra no painel o que já foi respondido, passo a passo
+        var trilha = [["Para quem", q ? ROTULO_QUEM[q] : ""],
+          ["O que tem chamado atenção", sinais.length ? sinais.length + (sinais.length > 1 ? " marcados" : " marcado") : ""],
+          ["Convênio", c]];
         res.innerHTML =
           '<svg class="guia__vazio-fig" viewBox="0 0 100 100" aria-hidden="true"><use href="#bv-simbolo"/></svg>' +
           '<h3>' + (q ? "Agora, o que tem chamado sua atenção?" : "A gente indica por onde começar") + "</h3>" +
           '<p class="guia__vazio">' + (q ? "Marque um ou mais itens no passo 2. A indicação aparece aqui na hora." :
-            "Responda as perguntas e aparece aqui qual especialidade procurar, com quem, e a mensagem pronta para a recepção.") + "</p>";
+            "Responda as perguntas e aparece aqui qual especialidade procurar, com quem, e a mensagem pronta para a recepção.") + "</p>" +
+          '<ol class="guia__trilha">' + trilha.map(function (p, i) {
+            return '<li' + (p[1] ? ' class="feito"' : "") + '><span class="guia__trilha-n">' +
+              (p[1] ? '<svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>' : i + 1) + "</span><b>" + p[0] + "</b>" +
+              (p[1] ? "<small>" + p[1] + "</small>" : "") + "</li>";
+          }).join("") + "</ol>";
         return;
       }
 
@@ -382,7 +397,9 @@
         '<p class="guia__vazio">' + (ordem.length > 1 ? "Pelo que você marcou, estas especialidades podem ajudar:" : "Pelo que você marcou, esta especialidade pode ajudar:") + "</p>" +
         '<ul class="guia__lista">' + ordem.map(function (k, i) {
           var e = ESP[k];
-          return '<li class="guia__item" style="--i:' + i + '"><span class="guia__item-ic"><svg class="ic" aria-hidden="true"><use href="#' + e.ic + '"/></svg></span>' +
+          var fig = e.foto ? '<img class="guia__item-foto" src="' + base + "assets/img/" + e.foto + '.webp" alt="" width="56" height="56" loading="lazy" decoding="async">' :
+            '<span class="guia__item-ic"><svg class="ic" aria-hidden="true"><use href="#' + e.ic + '"/></svg></span>';
+          return '<li class="guia__item" style="--i:' + i + '">' + fig +
             "<b>" + e.nome + "</b><small>" + e.quem + ' · <a href="' + base + e.url + '">ver a página</a></small></li>';
         }).join("") + "</ul>" +
         '<p class="guia__msg"><b>Mensagem que vai pronta:</b>\n' + msg.replace(/</g, "&lt;") + "</p>" +
