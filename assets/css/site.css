@@ -119,14 +119,15 @@ button{font:inherit;color:inherit}
 .menu a::after{content:"";position:absolute;left:0;right:0;bottom:11px;height:2px;border-radius:2px;background:var(--mel);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--suave)}
 .menu a:hover,.menu a[aria-current="page"]{color:var(--petroleo)}
 .menu a:hover::after,.menu a[aria-current="page"]::after{transform:scaleX(1)}
-.topo__cta{margin-left:auto;min-height:46px;padding:.65rem 1.2rem;font-size:.92rem}
+.topo__cta{margin-left:auto;min-height:46px;padding:.65rem 1.2rem;font-size:.92rem;white-space:nowrap}
 .menu-btn{
   display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;flex:none;
   border:1px solid var(--linha);border-radius:50%;background:var(--papel);color:var(--petroleo);cursor:pointer;
 }
 .menu-btn .ic{width:22px;height:22px}
-/* seis itens desde 02/11/2026 (entrou Programas): o menu inteiro só a partir de 1160 */
-@media (min-width:1160px){
+/* seis itens desde 02/11/2026 (entrou Programas): o menu inteiro só a partir de 1260. Com
+   1160 o botão do topo das páginas de programa (texto mais comprido) ficava cortado */
+@media (min-width:1260px){
   .menu{display:flex}
   .topo__cta{margin-left:1.4rem}
   .menu-btn{display:none}
@@ -135,10 +136,22 @@ button{font:inherit;color:inherit}
   .marca__simbolo{width:36px;height:36px}
   .marca__nome{font-size:1.38rem}
   .marca__sub{font-size:.44rem;letter-spacing:.2em}
-  .topo__cta{padding:.6rem .9rem;font-size:.86rem}
-  .topo__cta .cta-mais{display:none}
 }
-@media (max-width:360px){.topo__cta{display:none}.menu-btn{margin-left:auto}}
+/* botão do topo (02/11/2026, ele: "no mobile saiu muito gordo"): entre 480 e 600 o texto
+   quebrava em três linhas, e de 390 a 430 o botão espremia e cortava até o "Agendar".
+   Agora nunca quebra: abaixo de 640 some o "pelo WhatsApp", abaixo de 540 fica só o ícone
+   num círculo que não encolhe (o botão flutuante do WhatsApp segue no canto). O texto
+   escondido continua lido pelo leitor de tela */
+@media (max-width:639px){
+  .topo__cta .cta-mais{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+}
+@media (max-width:539px){
+  .topo__cta{flex:none;width:46px;height:46px;min-height:46px;padding:0;border-radius:50%;gap:0}
+  .topo__cta > span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .topo__cta .ic{width:24px;height:24px}
+}
+@media (max-width:400px){.topo__linha{gap:.6rem}}   /* logo, círculo e menu cabem a partir de 341 */
+@media (max-width:340px){.topo__cta{display:none}.menu-btn{margin-left:auto}}
 
 /* gaveta do celular */
 .gaveta{
