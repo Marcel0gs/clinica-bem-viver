@@ -125,7 +125,8 @@ button{font:inherit;color:inherit}
   border:1px solid var(--linha);border-radius:50%;background:var(--papel);color:var(--petroleo);cursor:pointer;
 }
 .menu-btn .ic{width:22px;height:22px}
-@media (min-width:1060px){
+/* seis itens desde 02/11/2026 (entrou Programas): o menu inteiro só a partir de 1160 */
+@media (min-width:1160px){
   .menu{display:flex}
   .topo__cta{margin-left:1.4rem}
   .menu-btn{display:none}
@@ -417,6 +418,9 @@ main > section:not(.hero),main > .faixa{position:relative;z-index:1}
 .esp__quem b{display:block;font-size:.84rem;font-weight:700;color:var(--tinta)}
 .esp__avatar{flex:none;width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center 22%;
   box-shadow:0 0 0 2px var(--papel),0 0 0 3px var(--tom)}
+/* 02/11/2026, pedido da Carine: as duas profissionais lado a lado no pé, sem uma na frente */
+.esp__duo{display:flex;flex:none}
+.esp__duo .esp__avatar + .esp__avatar{margin-left:-11px}
 .esp__avatar--simbolo{display:grid;place-items:center;background:var(--tom-fundo)}
 .esp__avatar--simbolo svg{width:24px;height:24px;fill:none;stroke:var(--petroleo);stroke-width:5;stroke-linecap:round}
 .esp__card--foto .esp__ir{flex:none;gap:.55rem}
@@ -530,6 +534,12 @@ main > section:not(.hero),main > .faixa{position:relative;z-index:1}
 
 .guia__item-foto{grid-row:span 2;width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 22%;
   box-shadow:0 0 0 3px var(--papel),0 0 0 4px var(--linha)}
+/* 02/11/2026: psicologia com as duas profissionais, lado a lado */
+.guia__item-fotos{grid-row:span 2;display:flex}
+.guia__item-fotos .guia__item-foto + .guia__item-foto{margin-left:-16px}
+/* lembrete do programa que combina com o que foi marcado (IPD, CAA) */
+.guia__prog{font-size:.86rem;line-height:1.45;color:var(--tinta);background:var(--mel-fundo);border-left:3px solid var(--mel);border-radius:0 12px 12px 0;padding:.6rem .8rem;margin:-.3rem 0 1rem}
+.guia__prog a{font-weight:700}
 .guia__trilha{list-style:none;display:grid;gap:.6rem;margin:1.2rem 0 0;padding:1.1rem 0 0;border-top:1px solid var(--linha)}
 .guia__trilha li{display:grid;grid-template-columns:auto 1fr;column-gap:.75rem;align-items:center}
 .guia__trilha-n{grid-row:span 2;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;
@@ -558,30 +568,59 @@ html:not(.js) .sem-js-guia{display:block}
 .junto__item h3{font-size:1.2rem;margin-bottom:.35rem}
 .junto__item p{font-size:.96rem;color:var(--tinta-suave)}
 
-/* ---------------- o espaço (fotos reais) ---------------- */
-.espaco{display:grid;gap:1rem}
+/* ---------------- o espaço (fotos reais) ----------------
+   02/11/2026, fotos da Carine: quatro colunas em três faixas. Retrato ocupa uma
+   coluna e duas linhas, paisagem (--largo) duas e duas. Tocar abre o visor */
+.espaco{display:grid;gap:.9rem}
 @media (min-width:860px){
-  .espaco{grid-template-columns:1.25fr .75fr .75fr;grid-template-rows:300px 300px 280px}
-  .espaco__f--fono{grid-column:1;grid-row:1}
-  .espaco__f--psi{grid-column:2;grid-row:1 / span 2}
-  .espaco__f--inf{grid-column:3;grid-row:1 / span 2}
-  .espaco__f--fisio{grid-column:1;grid-row:2 / span 2}
-  .espaco__f--logo{grid-column:2 / span 2;grid-row:3}
+  .espaco{grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,15.5vw,188px);grid-auto-flow:dense}
+  .espaco__f{grid-row:span 2}
+  .espaco__f--largo{grid-column:span 2}
 }
 @media (max-width:859px){
   .espaco{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem;-webkit-overflow-scrolling:touch}
-  .espaco__f{height:360px;scroll-snap-align:start}
+  .espaco__f{height:380px;scroll-snap-align:start}
 }
-.espaco__f{position:relative;margin:0;overflow:hidden;border-radius:var(--raio);background:var(--areia)}
+.espaco__f{position:relative;display:block;margin:0;overflow:hidden;border-radius:var(--raio);background:var(--areia);text-decoration:none;cursor:zoom-in}
+.espaco__f[hidden]{display:none}
 .espaco__f img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--suave)}
-.espaco__f:hover img{transform:scale(1.05)}
-.espaco__f figcaption{
-  position:absolute;left:.8rem;right:.8rem;bottom:.8rem;padding:.7rem .9rem;border-radius:16px;
-  background:rgba(252,250,246,.93);font-size:.86rem;color:var(--tinta-suave);line-height:1.35;
+.espaco__f:hover img,.espaco__f:focus-visible img{transform:scale(1.05)}
+.espaco__leg{
+  position:absolute;left:.7rem;right:.7rem;bottom:.7rem;padding:.6rem .85rem;border-radius:16px;
+  background:rgba(252,250,246,.93);font-size:.84rem;color:var(--tinta-suave);line-height:1.35;
 }
-.espaco__f figcaption b{display:block;font:600 1rem/1.3 var(--serif);color:var(--petroleo-escuro)}
-/* na entrada a logo fica à esquerda: a legenda vai pro canto direito pra não cobrir o nome */
-.espaco__f--logo figcaption{left:auto;max-width:280px}
+.espaco__leg b{display:block;font:600 1rem/1.3 var(--serif);color:var(--petroleo-escuro)}
+.espaco__mais{display:flex;justify-content:center;margin-top:1.6rem}
+html:not(.js) .espaco__mais{display:none}
+
+/* ---------------- visor: a foto grande por cima da página ----------------
+   Um <dialog> só, criado pelo site.js e reaproveitado por toda galeria da página */
+.visor{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;
+  background:rgba(15,32,30,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--creme);overflow:hidden}
+.visor::backdrop{background:rgba(15,32,30,.5)}
+.visor__fig{position:absolute;inset:0;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;padding:4.6rem 5.4rem 1.6rem}
+.visor__img{max-width:100%;max-height:calc(100% - 4.5rem);width:auto;height:auto;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.45);
+  opacity:0;transition:opacity .3s ease}
+.visor__img.pronta{opacity:1}
+.visor__leg{font-size:.95rem;color:#C9D6CF;text-align:center;max-width:620px;line-height:1.45}
+.visor__leg b{display:block;font:600 1.15rem/1.3 var(--serif);color:var(--creme)}
+.visor__conta{position:absolute;top:1.5rem;left:1.5rem;margin:0;font:800 .82rem/1 var(--sans);letter-spacing:.14em;color:var(--mel)}
+.visor__btn{position:absolute;z-index:1;display:grid;place-items:center;width:52px;height:52px;padding:0;border-radius:50%;
+  border:1px solid rgba(247,243,236,.3);background:rgba(247,243,236,.08);color:var(--creme);cursor:pointer;transition:background .2s,border-color .2s}
+.visor__btn:hover,.visor__btn:focus-visible{background:rgba(247,243,236,.2);border-color:var(--mel)}
+.visor__btn .ic{width:22px;height:22px}
+.visor__fechar{top:.9rem;right:.9rem}
+.visor__ant,.visor__prox{top:50%;margin-top:-26px}
+.visor__ant{left:1rem}
+.visor__ant .ic{transform:rotate(180deg)}
+.visor__prox{right:1rem}
+@media (max-width:640px){
+  .visor__fig{padding:4.2rem .9rem 6rem}
+  .visor__ant,.visor__prox{top:auto;bottom:1.2rem;margin-top:0}
+  .visor__ant{left:calc(50% - 64px)}
+  .visor__prox{right:calc(50% - 64px)}
+}
+html.visor-aberto{overflow:hidden}
 
 /* ---------------- equipe ---------------- */
 .equipe{display:grid;gap:1.1rem}
@@ -612,18 +651,52 @@ html:not(.js) .sem-js-guia{display:block}
 .quem-atende + .quem-atende{margin-top:2.4rem;padding-top:2.4rem;border-top:1px solid var(--linha)}
 .pessoa__insta{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.9rem;text-decoration:none;margin-top:auto}
 .pessoa__insta:hover{text-decoration:underline}
-.pessoa__novo{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .6rem;border-radius:99px;background:var(--rosa);color:var(--noite)}
-.pessoa--caa{
-  background:var(--petroleo);border-color:var(--petroleo);color:var(--creme);justify-content:center;
+/* chamada que fecha a grade da equipe (02/11/2026, no lugar do cartão do CAA). Com duas
+   colunas ocupa a linha inteira, senão sobrava um buraco */
+.pessoa--chamada{justify-content:center;border-color:var(--petroleo);color:var(--creme);
+  background:linear-gradient(135deg,var(--petroleo),var(--petroleo-escuro))}
+.pessoa--chamada h3{color:var(--creme)}
+.pessoa--chamada p{color:#D2DDD7}
+.pessoa--chamada .olho{color:var(--mel)}
+.pessoa__link{color:var(--mel);font-weight:700;font-size:.92rem}
+@media (min-width:640px) and (max-width:1019px){.pessoa--chamada{grid-column:1 / -1}}
+
+/* ---------------- programas (02/11/2026) ----------------
+   O treinamento de CAA em destaque, com três fotos reais do curso empilhadas; os
+   outros dois usam o cartão das especialidades (.esp__card--foto) */
+.prog-destaque{
+  position:relative;isolation:isolate;overflow:hidden;display:grid;gap:2rem;align-items:center;
+  padding:clamp(1.2rem,3vw,2.2rem);border-radius:32px;color:var(--creme);
+  background:radial-gradient(circle at 100% 0,transparent 0 160px,rgba(247,243,236,.06) 161px 162px,transparent 163px 250px,rgba(247,243,236,.05) 251px 252px,transparent 253px),
+    linear-gradient(135deg,var(--petroleo),var(--petroleo-escuro));
+  box-shadow:var(--sombra-forte);
 }
-.pessoa--caa h3{color:var(--creme)}
-.pessoa--caa p{color:#D2DDD7}
-.pessoa--caa .olho{color:var(--mel)}
-@media (min-width:640px){
-  .pessoa--caa{grid-column:1 / -1;display:grid;grid-template-columns:1fr auto;column-gap:2rem;align-items:center}
-  .pessoa--caa > :not(.btn){grid-column:1}
-  .pessoa--caa .btn{grid-column:2;grid-row:1 / span 3}
-}
+@media (min-width:900px){.prog-destaque{grid-template-columns:1fr 1.05fr;gap:3rem}}
+.prog-destaque__fotos{position:relative;display:block;height:clamp(300px,42vw,470px)}
+.prog-destaque__fotos img{position:absolute;object-fit:cover;border-radius:22px;border:5px solid rgba(247,243,236,.92);box-shadow:0 22px 50px rgba(0,0,0,.28);
+  transition:transform .7s var(--suave)}
+.prog-destaque__f1{left:0;top:0;width:58%;height:84%}
+.prog-destaque__f2{right:0;top:6%;width:40%;height:50%}
+.prog-destaque__f3{right:4%;bottom:0;width:56%;height:44%}
+.prog-destaque:hover .prog-destaque__f1{transform:rotate(-1.5deg) scale(1.02)}
+.prog-destaque:hover .prog-destaque__f2{transform:rotate(2deg) translateY(-4px)}
+.prog-destaque:hover .prog-destaque__f3{transform:rotate(-1deg) translateY(4px)}
+.prog-destaque__texto{display:flex;flex-direction:column;align-items:flex-start;gap:.95rem}
+.prog-destaque .olho{color:var(--mel)}
+.prog-destaque h3{font-size:clamp(2rem,4vw,2.8rem);color:var(--creme)}
+.prog-destaque__frase{font:italic 500 clamp(1.1rem,1.8vw,1.3rem)/1.45 var(--serif);color:var(--mel)}
+.prog-destaque__texto > p:not([class]){color:#D2DDD7}
+.prog-destaque__chips{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none}
+.prog-destaque__chips li{font-size:.82rem;font-weight:700;padding:.4rem .8rem;border-radius:99px;background:rgba(247,243,236,.1);border:1px solid rgba(247,243,236,.22)}
+.prog-destaque__quem{display:flex;align-items:center;gap:.7rem;font-size:.84rem;color:#C9D6CF;line-height:1.3}
+.prog-destaque__quem b{display:block;font-size:.92rem;color:var(--creme)}
+.prog-destaque__quem .esp__avatar{--tom:var(--mel);box-shadow:0 0 0 2px var(--petroleo),0 0 0 3px var(--mel)}
+.prog-destaque__acoes{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
+.prog-grade{display:grid;gap:1.2rem;margin-top:1.2rem}
+@media (min-width:760px){.prog-grade{grid-template-columns:repeat(2,1fr)}}
+.prog-grade .esp__foto{aspect-ratio:2.2/1}
+.esp__num.prog-aviso{display:inline-flex;align-items:center;gap:.4rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(30,63,59,.78)}
+.prog-aviso .ic{width:14px;height:14px}
 
 /* tom de cada card: depois de .esp__card e .pessoa, senão o padrão deles vence */
 .tom-rosa{--tom:var(--rosa);--tom-fundo:var(--rosa-fundo)}
@@ -732,12 +805,61 @@ html:not(.js) .sem-js-guia{display:block}
 .bloco--papel{background:var(--papel)}
 .bloco h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:.8rem 0 1rem}
 .bloco__intro{color:var(--tinta-suave);max-width:680px;margin-bottom:2rem}
+.bloco__intro p + p{margin-top:.9rem}
+.bloco__sub{font-size:1.3rem;margin:0 0 1rem}
 .sinais{display:grid;gap:.8rem;list-style:none}
 @media (min-width:720px){.sinais{grid-template-columns:repeat(2,1fr)}}
 .sinais li{display:flex;gap:.9rem;align-items:flex-start;padding:1.05rem 1.15rem;border-radius:18px;background:var(--papel);border:1px solid var(--linha)}
 .bloco--papel .sinais li{background:var(--creme)}
 .sinais__ic{display:grid;place-items:center;width:30px;height:30px;flex:none;border-radius:50%;background:var(--folha-fundo);color:var(--petroleo)}
 .sinais__ic .ic{width:16px;height:16px;stroke-width:2.4}
+/* frentes de uma especialidade ou programa (02/11/2026): cartão com ícone e lista curta, sem número */
+.frentes{display:grid;gap:1rem;list-style:none}
+@media (min-width:820px){.frentes{grid-template-columns:repeat(var(--n,3),1fr)}}
+.frentes > li{padding:1.5rem 1.3rem 1.4rem;border-radius:var(--raio);background:var(--papel);border:1px solid var(--linha)}
+.bloco--papel .frentes > li{background:var(--creme)}
+.frentes__ic{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--mel-fundo);color:var(--petroleo);margin-bottom:1rem}
+.frentes__ic .ic{width:23px;height:23px}
+.frentes h3{font-size:1.2rem;margin-bottom:.55rem}
+.frentes > li > p{font-size:.95rem;color:var(--tinta-suave)}
+.frentes ul{list-style:none;display:grid;gap:.35rem;font-size:.95rem;color:var(--tinta-suave)}
+.frentes ul li{display:flex;gap:.55rem;align-items:baseline}
+.frentes ul li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--mel);transform:translateY(-2px)}
+.frentes > li.frentes__destaque{background:var(--petroleo);border-color:var(--petroleo);color:var(--creme)}
+.frentes__destaque h3{color:var(--creme)}
+.frentes > li.frentes__destaque > p{color:#D2DDD7}
+.frentes__destaque .frentes__ic{background:rgba(247,243,236,.12);color:var(--mel)}
+.frentes__destaque a{color:var(--mel);font-weight:700}
+
+/* ---------------- páginas de programa (02/11/2026) ---------------- */
+.prog-fatos{display:grid;gap:.7rem;list-style:none;margin-top:.4rem}
+@media (min-width:640px){.prog-fatos{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.prog-fatos{grid-template-columns:repeat(4,1fr)}}
+.prog-fatos li{display:flex;align-items:center;gap:.8rem;padding:1rem 1.1rem;border-radius:18px;background:var(--papel);border:1px solid var(--linha);
+  font-weight:700;color:var(--petroleo-escuro);line-height:1.3}
+.bloco--papel .prog-fatos li{background:var(--creme)}
+.prog-fatos .ic{width:24px;height:24px;color:var(--petroleo)}
+.prog-pergunta{font:italic 500 clamp(1.2rem,2.2vw,1.5rem)/1.45 var(--serif);color:var(--petroleo);max-width:780px;margin-bottom:1.4rem}
+.prog-aviso-topo{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.3rem;padding:.55rem 1rem;border-radius:99px;
+  background:var(--mel-fundo);border:1px solid var(--mel);font-weight:700;font-size:.92rem;color:var(--petroleo-escuro)}
+.prog-aviso-topo .ic{color:var(--petroleo)}
+.prog-chamada{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:1rem;
+  padding:clamp(1.8rem,4vw,3rem);border-radius:32px;color:var(--creme);box-shadow:var(--sombra-forte);
+  background:radial-gradient(circle at 100% 0,transparent 0 160px,rgba(247,243,236,.06) 161px 162px,transparent 163px 250px,rgba(247,243,236,.05) 251px 252px,transparent 253px),
+    linear-gradient(135deg,var(--petroleo),var(--petroleo-escuro))}
+.prog-chamada .olho{color:var(--mel)}
+.prog-chamada h2{color:var(--creme);margin:0}
+.prog-chamada p{color:#D2DDD7;max-width:680px}
+.prog-chamada .prog-chamada__frase{font:italic 500 1.2rem/1.45 var(--serif);color:var(--mel)}
+.prog-chamada .prog-chamada__nota{font-size:.9rem}
+
+/* galeria do curso: colunas, cada foto na proporção dela, tocar abre o visor */
+.galeria{columns:2 140px;column-gap:.9rem}
+@media (min-width:900px){.galeria{columns:3}}
+.galeria__f{position:relative;display:block;break-inside:avoid;margin:0 0 .9rem;border-radius:20px;overflow:hidden;background:var(--areia);cursor:zoom-in;text-decoration:none}
+.galeria__f img{width:100%;height:auto;transition:transform 1.1s var(--suave)}
+.galeria__f:hover img,.galeria__f:focus-visible img{transform:scale(1.04)}
+.galeria__leg{position:absolute;left:.6rem;bottom:.6rem;padding:.35rem .75rem;border-radius:99px;background:rgba(252,250,246,.93);font-size:.8rem;font-weight:700;color:var(--petroleo-escuro)}
 .nota-cuidado{margin-top:1.4rem;padding:1rem 1.2rem;border-left:4px solid var(--mel);background:var(--mel-fundo);border-radius:0 14px 14px 0;font-size:.95rem;color:var(--tinta)}
 .passos{display:grid;gap:1rem;list-style:none;counter-reset:passo}
 @media (min-width:820px){.passos{grid-template-columns:repeat(var(--n,3),1fr)}}
@@ -769,7 +891,8 @@ html:not(.js) .sem-js-guia{display:block}
 /* ---------------- rodapé ---------------- */
 .rodape{background:var(--noite);color:#C9D6CF;padding:4rem 0 2rem;position:relative;z-index:1}
 .rodape__grade{display:grid;gap:2.2rem}
-@media (min-width:860px){.rodape__grade{grid-template-columns:1.3fr 1fr 1fr}}
+@media (min-width:640px){.rodape__grade{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1020px){.rodape__grade{grid-template-columns:1.3fr 1fr 1fr 1fr}}
 .rodape .marca{color:var(--creme)}
 .rodape .marca__nome{color:var(--creme)}
 .rodape .marca__sub{color:#9FB3AA}
@@ -779,6 +902,11 @@ html:not(.js) .sem-js-guia{display:block}
 .rodape a{color:#E3ECE7;text-decoration:none}
 .rodape a:hover{text-decoration:underline}
 .rodape__base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.1);font-size:.84rem;color:#94A89F}
+/* assinatura de quem fez o site (templates/componentes/assinatura-rodape.html) */
+.rodape .assinatura{margin:1.6rem 0 0;max-width:none;text-align:center;font-size:.72rem;letter-spacing:.04em;opacity:.75}
+.assinatura a{color:inherit;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;transition:opacity .2s ease}
+.assinatura a:hover{opacity:.7;text-decoration:none}
+@media (max-width:640px){.rodape{padding-bottom:5.5rem}}
 
 /* ---------------- mapa, embaixo da fachada no "Onde estamos" (pedido dele) ---------------- */
 .contato__lado{display:grid;gap:1.2rem}

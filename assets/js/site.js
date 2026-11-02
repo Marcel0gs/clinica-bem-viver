@@ -100,7 +100,7 @@
     var VEL = [0.24, 0.42, 0.3, 0.24];   /* anel, e cada bolinha atrás da anterior */
     var rodando = false;
     var CLICAVEL = "a,button,label,summary,input,select,textarea,[role=button]";
-    var ESCURO = ".guia-sec,.chamada,.rodape,.pessoa--caa,.esp__card--guia,.faixa,.capa__fotos,.citacao,.intro";
+    var ESCURO = ".guia-sec,.chamada,.rodape,.prog-destaque,.prog-chamada,.pessoa--chamada,.frentes__destaque,.esp__card--guia,.faixa,.capa__fotos,.citacao,.intro";
     var passo = function () {
       var mexeu = false;
       pecas.forEach(function (p, i) {
@@ -292,16 +292,22 @@
   var guia = $("[data-guia]");
   if (guia) {
     var base = guia.getAttribute("data-base") || "";
+    // 02/11/2026, documento da Carine: a psicologia mostra as duas profissionais de cada
+    // frente, a avaliação neuropsicológica é só com ela, e a orofacial virou fono adulto
     var ESP = {
-      "psi-adulto":   { nome: "Psicologia adulto", quem: "Com a psicóloga Carine Pinheiro de Andrade", url: "especialidades/psicologia-adulto/", ic: "i-poltrona", foto: "eq-carine" },
-      "psi-infantil": { nome: "Psicologia infantojuvenil", quem: "Com a psicóloga infantil Liliane Martins, às sextas", url: "especialidades/psicologia-infantil/", ic: "i-sorriso", foto: "eq-liliane" },
-      "neuro":        { nome: "Avaliação neuropsicológica", quem: "Investiga atenção, memória, linguagem e aprendizagem", url: "especialidades/avaliacao-neuropsicologica/", ic: "i-cerebro" },
-      "fono":         { nome: "Fonoaudiologia infantil", quem: "Com a fonoaudióloga Jussara Werner", url: "especialidades/fonoaudiologia-infantil/", ic: "i-fala", foto: "eq-jussara" },
-      "orofacial":    { nome: "Reabilitação orofacial", quem: "Com a fonoaudióloga Rita de Cássia", url: "especialidades/reabilitacao-orofacial/", ic: "i-rosto", foto: "eq-rita" },
-      "fisio":        { nome: "Fisioterapia", quem: "Com a fisioterapeuta Simone", url: "especialidades/fisioterapia/", ic: "i-corpo", foto: "eq-simone" },
-      "nutri":        { nome: "Nutrição", quem: "Com a nutricionista Jordanya Malta", url: "especialidades/nutricao/", ic: "i-maca", foto: "eq-jordanya" }
+      "psi-adulto":   { nome: "Psicologia adulto", quem: "Com as psicólogas Carine Pinheiro de Andrade e Daniela Antonieta", url: "especialidades/psicologia-adulto/", ic: "i-poltrona", fotos: ["eq-carine", "eq-daniela"] },
+      "psi-infantil": { nome: "Psicologia infantojuvenil", quem: "Com as psicólogas infantis Elcione e Liliane Martins", url: "especialidades/psicologia-infantil/", ic: "i-sorriso", fotos: ["eq-elcione", "eq-liliane"] },
+      "neuro":        { nome: "Avaliação neuropsicológica", quem: "Com a neuropsicóloga Carine Pinheiro de Andrade", url: "especialidades/avaliacao-neuropsicologica/", ic: "i-cerebro", fotos: ["eq-carine"] },
+      "fono":         { nome: "Fonoaudiologia infantil", quem: "Com a fonoaudióloga Jussara Werner", url: "especialidades/fonoaudiologia-infantil/", ic: "i-fala", fotos: ["eq-jussara"] },
+      "fono-adulto":  { nome: "Fonoaudiologia adulto", quem: "Com a fonoaudióloga Rita de Cássia", url: "especialidades/fonoaudiologia-adulto/", ic: "i-rosto", fotos: ["eq-rita"] },
+      "fisio":        { nome: "Fisioterapia", quem: "Com a fisioterapeuta Simone Werner", url: "especialidades/fisioterapia/", ic: "i-corpo", fotos: ["eq-simone"] },
+      "nutri":        { nome: "Nutrição", quem: "Com a nutricionista Jordanya Malta", url: "especialidades/nutricao/", ic: "i-maca", fotos: ["eq-jordanya"] }
     };
+    // só "Outros motivos" marcado: não tem especialidade, a recepção indica
+    var RECEPCAO = { nome: "Conversa com a recepção", quem: "Conte o que está acontecendo e a equipe indica o profissional", ic: "i-duvida" };
     // 29/10/2026 (pedido dele: "mais visual"): cada sinal ganhou um ícone, o 4º item.
+    // 02/11/2026 (pedido da Carine): "Avaliação neuropsicológica" e "Outros" nas duas
+    // listas. O 5º item, quando existe, é como o sinal entra na mensagem pronta
     var SINAIS = {
       adulto: [
         ["a-ansiedade", "Ansiedade, tristeza ou estresse", ["psi-adulto"], "i-chuva"],
@@ -311,7 +317,9 @@
         ["a-dor", "Dor na coluna, no pescoço ou nas articulações", ["fisio"], "i-osso"],
         ["a-lesao", "Recuperação de lesão ou cirurgia", ["fisio"], "i-curativo"],
         ["a-peso", "Alimentação, peso ou exames alterados", ["nutri"], "i-salada"],
-        ["a-face", "Recuperação de cirurgia ortognática ou na face", ["orofacial"], "i-rosto"]
+        ["a-face", "Cirurgia na face, paralisia facial, DTM ou bruxismo", ["fono-adulto"], "i-rosto"],
+        ["a-neuro", "Avaliação neuropsicológica", ["neuro"], "i-cerebro", "procuro uma avaliação neuropsicológica"],
+        ["a-outros", "Outros motivos", [], "i-duvida", "outro motivo, que explico na conversa"]
       ],
       crianca: [
         ["c-fala", "Fala pouco ou começou a falar tarde", ["fono"], "i-balao"],
@@ -322,9 +330,16 @@
         ["c-escola", "Dificuldade na escola: atenção, leitura ou memória", ["neuro", "psi-infantil"], "i-livro"],
         ["c-tea", "A escola ou o médico falou em TEA ou TDAH", ["neuro", "psi-infantil", "fono"], "i-quebra"],
         ["c-come", "Come pouco, é muito seletivo ou tem o peso fora do esperado", ["nutri"], "i-talher"],
-        ["c-adolesc", "Ansiedade, tristeza ou isolamento na adolescência", ["psi-infantil"], "i-garoa"]
+        ["c-adolesc", "Ansiedade, tristeza ou isolamento na adolescência", ["psi-infantil"], "i-garoa"],
+        ["c-neuro", "Avaliação neuropsicológica", ["neuro"], "i-cerebro", "procuro uma avaliação neuropsicológica"],
+        ["c-outros", "Outros motivos", [], "i-duvida", "outro motivo, que explico na conversa"]
       ]
     };
+    // quando o que foi marcado bate com um programa, o painel lembra dele embaixo
+    var PROGRAMAS = [
+      { sinais: ["c-escola", "c-tea"], texto: "Para crianças e adolescentes de 6 a 15 anos com TDAH ou TEA nível 1, a clínica também tem o", nome: "programa IPD", url: "programas/ipd/" },
+      { sinais: ["c-fala", "c-caa"], texto: "Para a família usar a comunicação alternativa no dia a dia, tem o", nome: "treinamento de CAA", url: "programas/treinamento-caa/" }
+    ];
     var PRA_QUEM = { eu: "para mim", filho: "para meu filho ou minha filha", familiar: "para uma pessoa da minha família" };
     var ROTULO_QUEM = { eu: "Para mim", filho: "Para meu filho ou filha", familiar: "Para outra pessoa da família" };
 
@@ -387,21 +402,27 @@
       });
       var ordem = Object.keys(pontos).sort(function (a, b) { return pontos[b] - pontos[a]; }).slice(0, 3);
       var nomes = ordem.map(function (k) { var n = ESP[k].nome; return n.charAt(0).toLowerCase() + n.slice(1); });
+      var itens = ordem.length ? ordem.map(function (k) { return ESP[k]; }) : [RECEPCAO];
+      var dicas = PROGRAMAS.filter(function (p) { return p.sinais.some(function (s) { return marcados[s]; }); });
 
-      var msg = "Olá! Vim pelo site da Bem Viver e gostaria de agendar " + juntaE(nomes) + " " + PRA_QUEM[q] + "." +
-        "\nO que tem chamado atenção: " + sinais.map(function (s) { return s[1].charAt(0).toLowerCase() + s[1].slice(1); }).join("; ") + "." +
+      var msg = "Olá! Vim pelo site da Bem Viver e " +
+        (ordem.length ? "gostaria de agendar " + juntaE(nomes) : "gostaria de ajuda para saber qual atendimento procurar") + " " + PRA_QUEM[q] + "." +
+        "\nO que tem chamado atenção: " + sinais.map(function (s) { return s[4] || s[1].charAt(0).toLowerCase() + s[1].slice(1); }).join("; ") + "." +
         (c === "Particular" ? "\nSeria particular." : c === "Ainda não sei" ? "\nAinda não sei se vou usar convênio." : c ? "\nConvênio: " + c + "." : "");
 
       res.innerHTML =
         "<h3>Por onde começar</h3>" +
-        '<p class="guia__vazio">' + (ordem.length > 1 ? "Pelo que você marcou, estas especialidades podem ajudar:" : "Pelo que você marcou, esta especialidade pode ajudar:") + "</p>" +
-        '<ul class="guia__lista">' + ordem.map(function (k, i) {
-          var e = ESP[k];
-          var fig = e.foto ? '<img class="guia__item-foto" src="' + base + "assets/img/" + e.foto + '.webp" alt="" width="56" height="56" loading="lazy" decoding="async">' :
+        '<p class="guia__vazio">' + (!ordem.length ? "A recepção ajuda a encontrar o profissional certo para o que você precisa:" :
+          ordem.length > 1 ? "Pelo que você marcou, estas especialidades podem ajudar:" : "Pelo que você marcou, esta especialidade pode ajudar:") + "</p>" +
+        '<ul class="guia__lista">' + itens.map(function (e, i) {
+          var fig = e.fotos ? '<span class="guia__item-fotos">' + e.fotos.map(function (f) {
+              return '<img class="guia__item-foto" src="' + base + "assets/img/" + f + '.webp" alt="" width="56" height="56" loading="lazy" decoding="async">';
+            }).join("") + "</span>" :
             '<span class="guia__item-ic"><svg class="ic" aria-hidden="true"><use href="#' + e.ic + '"/></svg></span>';
           return '<li class="guia__item" style="--i:' + i + '">' + fig +
-            "<b>" + e.nome + "</b><small>" + e.quem + ' · <a href="' + base + e.url + '">ver a página</a></small></li>';
+            "<b>" + e.nome + "</b><small>" + e.quem + (e.url ? ' · <a href="' + base + e.url + '">ver a página</a>' : "") + "</small></li>";
         }).join("") + "</ul>" +
+        dicas.map(function (p) { return '<p class="guia__prog">' + p.texto + ' <a href="' + base + p.url + '">' + p.nome + "</a>.</p>"; }).join("") +
         '<p class="guia__msg"><b>Mensagem que vai pronta:</b>\n' + msg.replace(/</g, "&lt;") + "</p>" +
         '<a class="btn" href="' + linkZap(msg) + '" target="_blank" rel="noopener"><svg class="ic zap-ic" aria-hidden="true"><use href="#i-zap"/></svg>Enviar para a recepção</a>' +
         '<p class="guia__aviso">É uma orientação para facilitar o primeiro contato, não um diagnóstico. Na conversa, a equipe confirma o melhor caminho e a cobertura do seu convênio.</p>' +
@@ -422,5 +443,76 @@
     guia.addEventListener("submit", function (e) { e.preventDefault(); });
     montaSinais();
     desenha();
+  }
+
+  /* ---------- 9. galeria: a foto grande por cima da página ----------
+     02/11/2026. Cada foto de [data-galeria] é um link pra imagem grande, então sem
+     JS ela abre sozinha. Aqui abre num <dialog> com setas, contador, teclado e
+     arrasto no celular. Link com hidden só aparece no visor; a legenda vem do
+     [class$="__leg"] de dentro do link, ou do data-leg. */
+  var galerias = $$("[data-galeria]");
+  if (galerias.length && window.HTMLDialogElement) {
+    var visor = document.createElement("dialog");
+    visor.className = "visor";
+    visor.setAttribute("aria-label", "Fotos ampliadas");
+    visor.innerHTML =
+      '<p class="visor__conta" aria-live="polite"></p>' +
+      '<figure class="visor__fig"><img class="visor__img" alt=""><figcaption class="visor__leg"></figcaption></figure>' +
+      '<button class="visor__btn visor__fechar" type="button" aria-label="Fechar"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>' +
+      '<button class="visor__btn visor__ant" type="button" aria-label="Foto anterior"><svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></button>' +
+      '<button class="visor__btn visor__prox" type="button" aria-label="Próxima foto"><svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></button>';
+    document.body.appendChild(visor);
+    var visorImg = $(".visor__img", visor), visorLeg = $(".visor__leg", visor), visorConta = $(".visor__conta", visor);
+    var visorFotos = [], visorPos = 0, visorX = null;
+    visorImg.addEventListener("load", function () { visorImg.classList.add("pronta"); });
+    var visorMostra = function (i) {
+      visorPos = (i + visorFotos.length) % visorFotos.length;
+      var f = visorFotos[visorPos];
+      if (visorImg.getAttribute("src") !== f.src) { visorImg.classList.remove("pronta"); visorImg.src = f.src; }
+      visorImg.alt = f.alt;
+      visorLeg.innerHTML = f.leg;
+      visorConta.textContent = (visorPos + 1) + " / " + visorFotos.length;
+      new Image().src = visorFotos[(visorPos + 1) % visorFotos.length].src;   /* a próxima já vem carregando */
+    };
+    var visorAbre = function (lista, i) {
+      visorFotos = lista;
+      visorMostra(i);
+      d.classList.add("visor-aberto");
+      visor.showModal();
+    };
+    visor.addEventListener("close", function () { d.classList.remove("visor-aberto"); });
+    galerias.forEach(function (g) {
+      var links = $$("a[href]", g);
+      var lista = links.map(function (a) {
+        var img = $("img", a), leg = $('[class$="__leg"]', a);
+        return { src: a.getAttribute("href"), alt: img ? img.alt : a.getAttribute("data-alt") || "",
+          leg: leg ? leg.innerHTML : a.getAttribute("data-leg") || "" };
+      });
+      links.forEach(function (a, i) {
+        a.addEventListener("click", function (e) {
+          if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+          e.preventDefault();
+          visorAbre(lista, i);
+        });
+      });
+      var sec = g.closest("section"), botao = sec && $("[data-galeria-abrir]", sec);
+      if (botao) botao.addEventListener("click", function () { visorAbre(lista, 0); });
+    });
+    $(".visor__fechar", visor).addEventListener("click", function () { visor.close(); });
+    $(".visor__ant", visor).addEventListener("click", function () { visorMostra(visorPos - 1); });
+    $(".visor__prox", visor).addEventListener("click", function () { visorMostra(visorPos + 1); });
+    visor.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") visorMostra(visorPos - 1);
+      if (e.key === "ArrowRight") visorMostra(visorPos + 1);
+    });
+    /* clique fora da foto e dos botões fecha */
+    visor.addEventListener("click", function (e) { if (e.target === visor || e.target.classList.contains("visor__fig")) visor.close(); });
+    visor.addEventListener("touchstart", function (e) { visorX = e.touches[0].clientX; }, { passive: true });
+    visor.addEventListener("touchend", function (e) {
+      if (visorX === null) return;
+      var dx = e.changedTouches[0].clientX - visorX;
+      visorX = null;
+      if (Math.abs(dx) > 45) visorMostra(visorPos + (dx < 0 ? 1 : -1));
+    });
   }
 })();
