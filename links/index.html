@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<!-- Google Analytics 4 (04/11/2026): conta os toques no WhatsApp pela medição otimizada -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRZ7HY3TYR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WRZ7HY3TYR');
+  // Toque em qualquer link do WhatsApp vira o evento principal contato_whatsapp (04/11/2026)
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+    if (a) gtag('event', 'contato_whatsapp', { link_url: a.href, pagina: location.pathname });
+  });
+</script>
+<!-- Microsoft Clarity (04/11/2026): gravação das visitas e mapa de calor -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "z8gtgcn1j5");
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className += " js";</script>
+<!-- =====================================================================
+     PAGINA DE LINKS (bio do Instagram e plaquinha do Google), 04/11/2026.
+     Molde: clientes/AnaFlaviaAraujo/site/links (que veio da Joyce): avaliar no
+     Google em destaque, agendar em cartao cheio, marcas com as cores oficiais,
+     faixas de arrastar e faiscas no toque. Aqui, nas cores do site da clinica.
+     Pedido dele: so o Instagram da clinica (nenhum das profissionais), as
+     especialidades, o programa com inscricao aberta (IPD), fotos do espaco e os
+     convenios com a logo original no fim.
+     Pagina de passagem: noindex e fora do sitemap.
+     ===================================================================== -->
+<title>Links | Clínica Bem Viver, Ipatinga/MG</title>
+<meta name="description" content="Agende pelo WhatsApp, avalie no Google, veja as especialidades, o IPD com inscrições abertas, o espaço e os convênios da Clínica Bem Viver, no Jardim Panorama, em Ipatinga/MG.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#F7F3EC">
+<link rel="canonical" href="https://sejabemviver.com.br/links/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Clínica Bem Viver">
+<meta property="og:title" content="Clínica Bem Viver | Links">
+<meta property="og:description" content="Agende pelo WhatsApp, veja as especialidades e como chegar à clínica, no Jardim Panorama, em Ipatinga/MG.">
+<meta property="og:url" content="https://sejabemviver.com.br/links/">
+<meta property="og:image" content="https://sejabemviver.com.br/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700;800&family=Quicksand:wght@500;600&display=swap">
+<link rel="preload" as="image" href="../assets/img/links/capa.webp" fetchpriority="high">
+<style>
+:root{
+  /* as mesmas cores do site (assets/css/site.css) */
+  --petroleo:#2D5A55;--petroleo-2:#24504B;--petroleo-escuro:#1E3F3B;--noite:#16302D;
+  --salvia:#8FA89B;--salvia-clara:#DCE6DF;
+  --creme:#F7F3EC;--papel:#FCFAF6;--areia:#EFE6D6;
+  --rosa:#E5B7AE;--rosa-fundo:#F6E4DF;--mel:#DCC394;--mel-fundo:#F3EAD7;--folha:#B5C4A8;--folha-fundo:#E6EDDF;
+  --tinta:#22302E;--tinta-suave:#55625F;--linha:rgba(45,90,85,.14);
+  --serif:"Lora",Georgia,serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --marca:"Quicksand","Nunito Sans",system-ui,sans-serif;
+  --suave:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--tinta);font:16px/1.5 var(--sans);overflow-x:clip;background:var(--creme)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--petroleo);outline-offset:3px}
+.i{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* fundo: no computador, a fachada desfocada atras da coluna */
+.fundo{position:fixed;inset:0;z-index:-1;background:var(--creme)}
+@media (min-width:620px){
+  .fundo{background:url(../assets/img/links/capa.webp) center/cover}
+  .fundo::after{content:"";position:absolute;inset:0;background:rgba(247,243,236,.84);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+}
+.coluna{width:min(460px,100%);margin:0 auto;padding:14px 16px 40px}
+@media (min-width:620px){.coluna{margin:28px auto;padding:16px 20px 36px;background:var(--creme);border-radius:30px;box-shadow:0 30px 80px rgba(30,63,59,.2)}}
+
+/* ---------- topo: a fachada, o selo com a logo e o nome ---------- */
+.topo{position:relative;text-align:center}
+.capa{position:relative;height:178px;border-radius:24px;overflow:hidden;background:var(--areia)}
+.capa img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.capa::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(22,48,45,0) 40%,rgba(22,48,45,.28))}
+/* as tres bolinhas da sala infantil, soltas na capa */
+.bolinhas{position:absolute;inset:0;pointer-events:none}
+.bolinhas span{position:absolute;border-radius:50%;opacity:.9}
+.bolinhas span:nth-child(1){width:14px;height:14px;left:9%;top:16%;background:var(--rosa)}
+.bolinhas span:nth-child(2){width:9px;height:9px;left:16%;top:30%;background:var(--mel)}
+.bolinhas span:nth-child(3){width:11px;height:11px;right:10%;top:20%;background:var(--folha)}
+.js .bolinhas span{animation:boia 6s ease-in-out infinite}
+.js .bolinhas span:nth-child(2){animation-delay:-2s}
+.js .bolinhas span:nth-child(3){animation-delay:-4s}
+@keyframes boia{50%{transform:translateY(-7px)}}
+.selo{
+  position:relative;z-index:2;width:108px;height:108px;margin:-54px auto 0;border-radius:50%;padding:4px;
+  background:conic-gradient(from 200deg,var(--petroleo),var(--salvia),var(--mel),var(--rosa),var(--folha),var(--petroleo));
+  box-shadow:0 14px 30px rgba(30,63,59,.24);
+}
+.selo__dentro{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;background:var(--papel);border:3px solid var(--creme)}
+/* o simbolo da logo se desenha uma vez, como se fosse escrito */
+.selo svg{width:58px;height:58px;fill:none;stroke:var(--petroleo);stroke-width:5.5;stroke-linecap:round;stroke-linejoin:round}
+.js .selo svg *{stroke-dasharray:1;stroke-dashoffset:1;animation:traco 1.4s .35s var(--suave) forwards}
+.js .selo svg circle{animation-delay:1.2s;animation-duration:.6s}
+@keyframes traco{to{stroke-dashoffset:0}}
+.nome{margin:12px 0 0;font:500 2rem/1 var(--marca);letter-spacing:-.01em;color:var(--petroleo)}
+.nome small{display:block;margin-top:.5rem;font:800 .6rem/1 var(--sans);letter-spacing:.26em;padding-left:.26em;text-transform:uppercase;color:var(--tinta-suave)}
+.bio{margin:14px auto 0;max-width:32ch;text-wrap:balance;font-size:.95rem;color:var(--tinta-suave)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem;margin-top:14px}
+.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .8rem;border-radius:999px;background:var(--papel);border:1px solid var(--linha);font-size:.75rem;font-weight:600;color:var(--tinta);text-decoration:none}
+.chip b{color:var(--petroleo);font-weight:800}
+.chip .i{width:14px;height:14px}
+.chip .i--estrela{fill:#FBBC04;stroke:#FBBC04;stroke-width:1}
+.status:empty{display:none}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--salvia)}
+.status--aberto::before{background:#3E9A62;box-shadow:0 0 0 3px rgba(62,154,98,.18)}
+.status--fechado::before{background:#B8604E}
+
+/* ---------- os links ---------- */
+.links{display:grid;gap:11px;margin:24px 0 0;list-style:none;padding:0}
+.link{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:grid;grid-template-columns:44px 1fr 18px;align-items:center;gap:.85rem;
+  padding:.85rem 1rem .85rem .85rem;border-radius:18px;text-decoration:none;
+  background:var(--papel);border:1px solid var(--linha);box-shadow:0 8px 22px rgba(30,63,59,.06);
+  transition:transform .25s var(--suave),box-shadow .3s ease,border-color .3s ease;
+}
+.link:hover{transform:translateY(-2px);border-color:rgba(45,90,85,.3);box-shadow:0 14px 30px rgba(30,63,59,.12)}
+.link:active{transform:scale(.985)}
+/* o brilho que passa UMA vez no hover (templates/componentes/botao-brilho-hover) */
+.link::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;z-index:1;background:linear-gradient(115deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s ease;pointer-events:none}
+.link:hover::before{left:130%}
+.link__ico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--salvia-clara);color:var(--petroleo)}
+.link__ico .i{width:22px;height:22px}
+.link__txt{min-width:0}
+.link__txt b{display:block;font:700 1rem/1.25 var(--sans);color:var(--tinta)}
+.link__txt small{display:block;margin-top:.15rem;font-size:.78rem;line-height:1.35;color:var(--tinta-suave)}
+/* uma linha so: subtitulo que quebra deixa um botao mais alto que os outros */
+.link:not(.link--avaliar):not(.link--ipd) .link__txt small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.link__seta{width:18px;height:18px;color:var(--salvia);transition:transform .3s var(--suave)}
+.link:hover .link__seta{transform:translateX(3px)}
+/* o principal: cheio, no petroleo da clinica */
+.link--cheio{background:linear-gradient(135deg,var(--petroleo-escuro) 0%,var(--petroleo) 55%,#3B6E67 100%);border-color:transparent;box-shadow:0 14px 32px rgba(30,63,59,.32)}
+.link--cheio .link__ico{background:rgba(255,255,255,.14);color:#fff}
+.link--cheio .link__ico .i--cheio{fill:currentColor;stroke:none}
+.link--cheio .link__txt b{color:#fff}
+.link--cheio .link__txt small{color:#CFE0D9}
+.link--cheio .link__seta{color:#CFE0D9}
+.link--cheio:hover{border-color:transparent;box-shadow:0 18px 40px rgba(30,63,59,.42)}
+/* avaliar: o destaque da pagina. Borda em degrade com as cores da clinica, estrelas
+   do Google e um brilho que passa sozinho de tempos em tempos */
+.link--avaliar{
+  grid-template-columns:52px 1fr 18px;padding:1rem 1rem 1rem .85rem;border:2px solid transparent;
+  background:linear-gradient(var(--papel),var(--papel)) padding-box,linear-gradient(135deg,var(--petroleo),var(--salvia) 40%,var(--mel) 70%,var(--rosa)) border-box;
+  box-shadow:0 14px 34px rgba(30,63,59,.18);
+}
+.link--avaliar:hover{border-color:transparent;box-shadow:0 18px 40px rgba(30,63,59,.26)}
+.link--avaliar::before{animation:passa 4.5s ease-in-out 1.4s infinite}
+@keyframes passa{0%{left:-60%}28%,100%{left:130%}}
+.link--avaliar .link__ico{width:52px;height:52px;border-radius:16px}
+.link--avaliar .link__ico .i{width:28px;height:28px}
+.link--avaliar .link__txt b{font-weight:800;font-size:1.08rem}
+.estrelas{display:flex;gap:2px;margin-bottom:.2rem}
+.estrelas .i{width:14px;height:14px;fill:#FBBC04;stroke:#FBBC04;stroke-width:1}
+/* IPD: inscricao aberta, no mel da clinica, com o selo pulsando */
+.link--ipd{background:linear-gradient(135deg,var(--mel-fundo),#FBF5EA 60%,var(--rosa-fundo));border-color:rgba(220,195,148,.7)}
+.link--ipd .link__ico{background:var(--mel);color:var(--noite)}
+.link--ipd .link__seta{color:#B79A5E}
+.aberta{display:inline-flex;align-items:center;gap:.35rem;margin-bottom:.25rem;padding:.15rem .55rem;border-radius:999px;background:var(--petroleo);color:#fff;font:800 .62rem/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.aberta::before{content:"";width:6px;height:6px;border-radius:50%;background:#9FE0B5}
+.js .aberta::before{animation:pulsa 1.8s ease-in-out infinite}
+@keyframes pulsa{50%{box-shadow:0 0 0 4px rgba(159,224,181,.35)}}
+/* marcas com as cores oficiais */
+.link__ico--google,.link__ico--maps{background:var(--papel);border:1px solid var(--linha)}
+.link__ico--google .i{width:24px;height:24px}
+.link__ico--maps .i{width:26px;height:26px}
+.link__ico--insta{background:radial-gradient(circle at 30% 107%,#FDF497 0%,#FDF497 5%,#FD5949 45%,#D6249F 60%,#285AEB 90%);color:#fff}
+.link__ico--insta .i{stroke-width:2}
+/* entrada em cascata, so com JS e sem "reduzir movimento" */
+.js .links > li{animation:sobe .7s var(--suave) both;animation-delay:calc(var(--o,0) * 70ms + .35s)}
+@keyframes sobe{from{opacity:0;transform:translateY(14px)}}
+
+/* ---------- especialidades e programas: faixa de arrastar ---------- */
+.titulo{display:flex;align-items:center;gap:.7rem;margin:30px 0 12px;font:500 1.3rem/1.2 var(--serif);color:var(--tinta)}
+.titulo::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--salvia),transparent)}
+.galeria{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;margin:0 -16px;padding:2px 16px 8px;scrollbar-width:none;list-style:none}
+.galeria::-webkit-scrollbar{display:none}
+.galeria li{flex:0 0 42%;scroll-snap-align:start}
+.card{
+  position:relative;isolation:isolate;display:flex;align-items:flex-end;aspect-ratio:4/5;overflow:hidden;
+  padding:.7rem;border-radius:16px;background:var(--petroleo-escuro);color:#fff;text-decoration:none;
+  font:600 1rem/1.15 var(--serif);box-shadow:0 8px 18px rgba(30,63,59,.14);-webkit-user-drag:none;user-select:none;
+}
+.card img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;transition:scale .8s var(--suave)}
+.card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(22,48,45,0) 40%,rgba(22,48,45,.88))}
+.card:hover img{scale:1.05}
+@media (hover:hover) and (pointer:fine){.galeria{cursor:grab}}
+/* o snap desliga enquanto o mouse arrasta, senao cada pixel puxa de volta pro cartao */
+.galeria.arrastando{scroll-snap-type:none;cursor:grabbing}
+@media (min-width:620px){.galeria{margin:0 -20px;padding:2px 20px 8px;scroll-padding-inline:20px}}
+
+/* ---------- o espaco: mosaico, cada foto abre grande ---------- */
+.espaco{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:112px;gap:8px;list-style:none;margin:0;padding:0}
+.espaco li:nth-child(1){grid-row:span 2}
+.espaco li:nth-child(4){grid-column:span 2}
+.foto{display:block;width:100%;height:100%;padding:0;border:0;border-radius:14px;overflow:hidden;background:var(--areia);cursor:zoom-in}
+.foto img{width:100%;height:100%;object-fit:cover;transition:scale .8s var(--suave)}
+.foto:hover img{scale:1.04}
+.visor{width:min(94vw,560px);max-width:none;max-height:92vh;padding:0;border:0;border-radius:18px;background:transparent;overflow:visible}
+.visor::backdrop{background:rgba(22,48,45,.86)}
+.visor img{width:100%;max-height:82vh;object-fit:contain;border-radius:18px}
+.visor p{margin:.6rem 0 0;text-align:center;color:#E8EFEA;font-size:.85rem}
+.visor__fechar{position:absolute;top:-14px;right:-6px;width:40px;height:40px;border-radius:50%;border:0;background:var(--papel);color:var(--tinta);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.visor__fechar .i{width:18px;height:18px}
+
+/* ---------- bom saber ---------- */
+.info{display:grid;gap:10px}
+.cartao{padding:1rem 1.05rem;border-radius:18px;background:var(--papel);border:1px solid var(--linha)}
+.cartao__cab{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:.9rem}
+.cartao__cab .i{width:18px;height:18px;color:var(--salvia)}
+.cartao p{margin:.45rem 0 0;font-size:.85rem;color:var(--tinta-suave)}
+.horas{display:grid;grid-template-columns:auto 1fr;gap:.15rem 1rem;margin:.55rem 0 0;font-size:.85rem}
+.horas dt{color:var(--tinta-suave)}
+.horas dd{margin:0;text-align:right;color:var(--tinta)}
+.horas .hoje{color:var(--petroleo);font-weight:800}
+
+/* ---------- convenios: as logos oficiais (as mesmas do site) ---------- */
+.conv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;list-style:none;margin:0;padding:0}
+.conv li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:86px;padding:.6rem .4rem;border-radius:14px;background:#fff;border:1px solid var(--linha);font-size:.66rem;font-weight:700;color:var(--tinta-suave);text-align:center}
+.conv__logo{position:relative;width:100%;height:36px}
+.conv__logo img{position:absolute;inset:0;margin:auto;width:auto;height:auto;max-width:var(--lw,78%);max-height:var(--lh,100%)}
+.conv .conv__parceria{background:var(--petroleo);border-color:var(--petroleo);color:var(--creme);font-size:.9rem;font-weight:800}
+.conv__parceria small{display:block;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#B9CFC7}
+.conv-nota{margin:.7rem 0 0;font-size:.8rem;color:var(--tinta-suave);text-align:center}
+.conv-nota a{color:var(--petroleo);font-weight:800;text-decoration:none;border-bottom:1px solid var(--salvia)}
+
+.rodape{margin-top:28px;text-align:center;font-size:.72rem;letter-spacing:.06em;color:var(--tinta-suave)}
+.assinatura{margin:.6rem 0 0;text-align:center;font-size:.7rem;letter-spacing:.04em;color:var(--tinta-suave)}
+.assinatura a{color:var(--petroleo);font-weight:700;text-decoration:none;border-bottom:1px solid var(--salvia);padding-bottom:1px;transition:color .2s ease}
+.assinatura a:hover{color:var(--tinta)}
+
+/* faiscas no toque, nas cores das bolinhas da sala infantil */
+.faisca{position:fixed;z-index:50;width:12px;height:12px;pointer-events:none;transform:translate(-50%,-50%);animation:faisca .8s var(--suave) forwards}
+.faisca svg{width:100%;height:100%;fill:currentColor}
+@keyframes faisca{to{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.2) rotate(90deg);opacity:0}}
+
+@media (prefers-reduced-motion:reduce){
+  .js .links > li,.js .bolinhas span,.js .aberta::before{animation:none}
+  .js .selo svg *{animation:none;stroke-dashoffset:0}
+  .faisca{display:none}
+  .link,.link::before,.link__seta,.card img,.foto img{transition:none}
+  .link--avaliar::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.8 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3ZM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-globo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-cerebro" viewBox="0 0 24 24"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <!-- Google e Maps nas cores oficiais (Wikimedia Commons), seta: copiados da pagina da Ana Flavia -->
+  <symbol id="i-google" viewBox="1 1 22 22"><g stroke="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></g></symbol>
+  <symbol id="i-maps" viewBox="0 0 92.3 132.3"><g stroke="none"><path fill="#1a73e8" d="M60.2 2.2C55.8.8 51 0 46.1 0 32 0 19.3 6.4 10.8 16.5l21.8 18.3L60.2 2.2z"/><path fill="#ea4335" d="M10.8 16.5C4.1 24.5 0 34.9 0 46.1c0 8.7 1.7 15.7 4.6 22l28-33.3-21.8-18.3z"/><path fill="#4285f4" d="M46.2 28.5c9.8 0 17.7 7.9 17.7 17.7 0 4.3-1.6 8.3-4.2 11.4 0 0 13.9-16.6 27.5-32.7-5.6-10.8-15.3-19-27-22.7L32.6 34.8c3.3-3.8 8.1-6.3 13.6-6.3"/><path fill="#fbbc04" d="M46.2 63.8c-9.8 0-17.7-7.9-17.7-17.7 0-4.3 1.5-8.3 4.1-11.3l-28 33.3c4.8 10.6 12.8 19.2 21 29.9l34.1-40.5c-3.3 3.9-8.1 6.3-13.5 6.3"/><path fill="#34a853" d="M59.1 109.2c15.4-24.1 33.3-35 33.3-63 0-7.7-1.9-14.9-5.2-21.3L25.6 98c2.6 3.4 5.3 7.3 7.9 11.3 9.4 14.5 6.8 23.1 12.8 23.1s3.4-8.7 12.8-23.2"/></g></symbol>
+  <symbol id="i-dir" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+</svg>
+
+<div class="fundo" aria-hidden="true"></div>
+
+<main class="coluna">
+
+  <header class="topo">
+    <!-- capa: a fachada real da clinica (foto da Carine, 02/11/2026) -->
+    <div class="capa">
+      <img src="../assets/img/links/capa.webp" width="1000" height="413" fetchpriority="high" alt="Fachada da Clínica Bem Viver, na Rua dos Caiapós, 15, com a placa das especialidades">
+      <div class="bolinhas" aria-hidden="true"><span></span><span></span><span></span></div>
+    </div>
+    <!-- selo: o simbolo da logo (o mesmo #bv-simbolo do site), com os tracos em pathLength 1 pra se desenhar -->
+    <div class="selo" aria-hidden="true"><div class="selo__dentro">
+      <svg viewBox="0 0 100 100"><path pathLength="1" d="M10 33C24 45 40 47 50.5 55C60 62 61 81 50 89C39 81 40 62 49.5 55C60 47 76 45 90 33"/><circle pathLength="1" cx="50" cy="17" r="9"/></svg>
+    </div></div>
+    <h1 class="nome">bemviver<small>Centro integrado de saúde</small></h1>
+    <p class="bio">Psicologia, fonoaudiologia, fisioterapia e nutrição no Jardim Panorama, em Ipatinga.</p>
+    <div class="chips">
+      <a class="chip" href="https://maps.google.com/?cid=10263170879626700148" target="_blank" rel="noopener"><svg class="i i--estrela" aria-hidden="true"><use href="#i-estrela"/></svg><b>5,0</b> no Google</a>
+      <span class="chip">Particular e convênios</span>
+      <span class="chip status" data-status aria-live="polite"></span>
+    </div>
+  </header>
+
+  <ul class="links">
+    <!-- o mesmo link de avaliacao da ficha (ficha-google.md) e da plaquinha NFC -->
+    <li style="--o:0"><a class="link link--avaliar" href="https://search.google.com/local/writereview?placeid=ChIJbRgieiYAsAARdGVI1Ykbbo4" target="_blank" rel="noopener">
+      <span class="link__ico link__ico--google"><svg class="i" aria-hidden="true"><use href="#i-google"/></svg></span>
+      <span class="link__txt">
+        <span class="estrelas" aria-hidden="true"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></span>
+        <b>Avaliar no Google</b><small>Leva 1 minuto e ajuda outras famílias a nos encontrar</small>
+      </span>
+      <svg class="i link__seta" aria-hidden="true"><use href="#i-dir"/></svg>
+    </a></li>
+    <!-- agendar e pelo WhatsApp da recepcao. Mensagem sem emoji (vira losango no wa.me) -->
+    <li style="--o:1"><a class="link link--cheio" href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Vim%20pelo%20link%20da%20Bem%20Viver%20e%20quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+      <span class="link__ico"><svg class="i i--cheio" aria-hidden="true"><use href="#i-zap"/></svg></span>
+      <span class="link__txt"><b>Agendar pelo WhatsApp</b><small>Recepção · (31) 98913-4114</small></span>
+      <svg class="i link__seta" aria-hidden="true"><use href="#i-dir"/></svg>
+    </a></li>
+    <!-- IPD: inscricoes abertas, inicio em fevereiro de 2027 (texto da Carine, programas/ipd). Quando fechar, sai daqui -->
+    <li style="--o:2"><a class="link link--ipd" href="../programas/ipd/">
+      <span class="link__ico"><svg class="i" aria-hidden="true"><use href="#i-cerebro"/></svg></span>
+      <span class="link__txt"><span class="aberta">Inscrições abertas · vagas limitadas</span><b>IPD, Inteligente Porém Disperso</b><small>6 a 15 anos, em pequenos grupos. Começa em fevereiro de 2027</small></span>
+      <svg class="i link__seta" aria-hidden="true"><use href="#i-dir"/></svg>
+    </a></li>
+    <li style="--o:3"><a class="link" href="https://www.instagram.com/sejabemviver/" target="_blank" rel="noopener">
+      <span class="link__ico link__ico--insta"><svg class="i" aria-hidden="true"><use href="#i-insta"/></svg></span>
+      <span class="link__txt"><b>Instagram</b><small>@sejabemviver</small></span>
+      <svg class="i link__seta" aria-hidden="true"><use href="#i-dir"/></svg>
+    </a></li>
+    <li style="--o:4"><a class="link" href="../">
+      <span class="link__ico"><svg class="i" aria-hidden="true"><use href="#i-globo"/></svg></span>
+      <span class="link__txt"><b>Site da clínica</b><small>Equipe, especialidades e dúvidas</small></span>
+      <svg class="i link__seta" aria-hidden="true"><use href="#i-dir"/></svg>
+    </a></li>
+    <li style="--o:5"><a class="link" href="https://maps.google.com/?cid=10263170879626700148" target="_blank" rel="noopener">
+      <span class="link__ico link__ico--maps"><svg class="i" aria-hidden="true"><use href="#i-maps"/></svg></span>
+      <span class="link__txt"><b>Como chegar</b><small>Rua dos Caiapós, 15 · Jardim Panorama</small></span>
+      <svg class="i link__seta" aria-hidden="true"><use href="#i-dir"/></svg>
+    </a></li>
+  </ul>
+
+  <h2 class="titulo">Especialidades</h2>
+  <ul class="galeria" aria-label="Especialidades da clínica: cada uma abre a página dela no site">
+    <li><a class="card" href="../especialidades/avaliacao-neuropsicologica/"><img src="../assets/img/links/esp-card-neuro.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Avaliação neuropsicológica</a></li>
+    <li><a class="card" href="../especialidades/psicologia-adulto/"><img src="../assets/img/links/esp-card-psicologia-adulto.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Psicologia adulto</a></li>
+    <li><a class="card" href="../especialidades/psicologia-infantil/"><img src="../assets/img/links/esp-card-infantil.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Psicologia infantojuvenil</a></li>
+    <li><a class="card" href="../especialidades/fonoaudiologia-infantil/"><img src="../assets/img/links/esp-card-fono.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Fonoaudiologia infantil</a></li>
+    <li><a class="card" href="../especialidades/fonoaudiologia-adulto/"><img src="../assets/img/links/esp-card-orofacial.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Fonoaudiologia adulto</a></li>
+    <li><a class="card" href="../especialidades/fisioterapia/"><img src="../assets/img/links/esp-card-fisio.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Fisioterapia</a></li>
+    <li><a class="card" href="../especialidades/nutricao/"><img src="../assets/img/links/esp-card-nutricao.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Nutrição</a></li>
+  </ul>
+
+  <h2 class="titulo">Programas</h2>
+  <!-- o cartao do IPD usa a mesma ilustracao do site (turma gerada, alt "Ilustracao"), aprovada por ele em 02/11 -->
+  <ul class="galeria" aria-label="Programas da clínica: cada um abre a página dele no site">
+    <li><a class="card" href="../programas/treinamento-caa/"><img src="../assets/img/links/esp-card-caa.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Treinamento de CAA</a></li>
+    <li><a class="card" href="../programas/ipd/"><img src="../assets/img/links/esp-card-ipd.webp" width="480" height="600" loading="lazy" decoding="async" alt="Ilustração: crianças em atividade de grupo">IPD</a></li>
+    <li><a class="card" href="../programas/envelhecer-em-movimento/"><img src="../assets/img/links/esp-card-envelhecer.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Envelhecer em Movimento</a></li>
+  </ul>
+
+  <h2 class="titulo">O espaço</h2>
+  <!-- fotos reais da Carine (02/11/2026). Toque abre a foto grande -->
+  <ul class="espaco">
+    <li><button class="foto" type="button" data-grande="../assets/img/esp-recepcao.webp"><img src="../assets/img/links/local-recepcao.webp" width="600" height="800" loading="lazy" decoding="async" alt="Recepção da clínica"></button></li>
+    <li><button class="foto" type="button" data-grande="../assets/img/esp-espera.webp"><img src="../assets/img/links/local-espera.webp" width="600" height="800" loading="lazy" decoding="async" alt="Sala de espera"></button></li>
+    <li><button class="foto" type="button" data-grande="../assets/img/esp-infantil.webp"><img src="../assets/img/links/local-infantil.webp" width="600" height="800" loading="lazy" decoding="async" alt="Sala de atendimento infantil, com brinquedos"></button></li>
+    <li><button class="foto" type="button" data-grande="../assets/img/esp-consultorio.webp"><img src="../assets/img/links/local-consultorio.webp" width="900" height="560" loading="lazy" decoding="async" alt="Consultório"></button></li>
+    <li><button class="foto" type="button" data-grande="../assets/img/esp-fono.webp"><img src="../assets/img/links/local-fono.webp" width="600" height="600" loading="lazy" decoding="async" alt="Sala de fonoaudiologia"></button></li>
+    <li><button class="foto" type="button" data-grande="../assets/img/esp-fisio.webp"><img src="../assets/img/links/local-fisio.webp" width="600" height="600" loading="lazy" decoding="async" alt="Sala de fisioterapia"></button></li>
+  </ul>
+
+  <h2 class="titulo">Bom saber</h2>
+  <div class="info">
+    <!-- horario da ficha do Google. A linha de hoje acende pelo script -->
+    <div class="cartao">
+      <div class="cartao__cab"><svg class="i" aria-hidden="true"><use href="#i-relogio"/></svg>Horário</div>
+      <dl class="horas" data-horas>
+        <dt data-dia="1,2">Segunda e terça</dt><dd data-dia="1,2">8h às 17h</dd>
+        <dt data-dia="3">Quarta</dt><dd data-dia="3">8h às 18h</dd>
+        <dt data-dia="4,5">Quinta e sexta</dt><dd data-dia="4,5">8h às 17h</dd>
+        <dt data-dia="6,0">Sábado e domingo</dt><dd data-dia="6,0">Fechado</dd>
+      </dl>
+    </div>
+    <div class="cartao">
+      <div class="cartao__cab"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Onde fica</div>
+      <p>Rua dos Caiapós, 15, Jardim Panorama, Ipatinga/MG. Atendimento com horário agendado.</p>
+    </div>
+  </div>
+
+  <h2 class="titulo">Convênios</h2>
+  <!-- as logos oficiais do site (assets/img/convenios, ver o comentario la no index):
+       Cenibra Log usa a da Cenibra, que e a dona da empresa -->
+  <ul class="conv">
+    <li><span class="conv__logo" style="--lw:84%"><img src="../assets/img/convenios/usisaude.svg" alt="" width="445" height="196" loading="lazy" decoding="async"></span>Usisaúde</li>
+    <li><span class="conv__logo" style="--lh:86%"><img src="../assets/img/convenios/vale.svg" alt="" width="125" height="64" loading="lazy" decoding="async"></span>Vale</li>
+    <li><span class="conv__logo" style="--lw:80%"><img src="../assets/img/convenios/copasa.svg" alt="" width="500" height="126" loading="lazy" decoding="async"></span>Copasa</li>
+    <li><span class="conv__logo"><img src="../assets/img/convenios/cemig-saude.svg" alt="" width="92" height="50" loading="lazy" decoding="async"></span>Cemig Saúde</li>
+    <li><span class="conv__logo"><img src="../assets/img/convenios/cenibra.svg" alt="" width="61" height="63" loading="lazy" decoding="async"></span>Cenibra</li>
+    <li><span class="conv__logo"><img src="../assets/img/convenios/cenibra.svg" alt="" width="61" height="63" loading="lazy" decoding="async"></span>Cenibra Log</li>
+    <li><span class="conv__logo" style="--lw:90%"><img src="../assets/img/convenios/fundaffemg.svg" alt="" width="222" height="47" loading="lazy" decoding="async"></span>Fundaffemg</li>
+    <li><span class="conv__logo" style="--lw:84%"><img src="../assets/img/convenios/sulamerica.webp" alt="" width="440" height="112" loading="lazy" decoding="async"></span>SulAmérica</li>
+    <li class="conv__parceria"><span><small>Parceria</small>AAPI</span></li>
+  </ul>
+  <p class="conv-nota">Conforme as regras de cada operadora. <a href="https://wa.me/5531989134114?text=Ol%C3%A1!%20Queria%20conferir%20se%20a%20cl%C3%ADnica%20atende%20pelo%20meu%20conv%C3%AAnio%3A%20" target="_blank" rel="noopener">Conferir o meu</a></p>
+
+  <p class="rodape">Clínica Bem Viver · Centro Integrado de Saúde · Ipatinga/MG</p>
+  <p class="assinatura">Desenvolvido por <a href="https://marcel0gs.github.io/marcelo-ribeiro-digital/" target="_blank" rel="noopener">Marcelo Ribeiro</a></p>
+</main>
+
+<dialog class="visor" aria-label="Foto do espaço">
+  <button class="visor__fechar" type="button" aria-label="Fechar"><svg class="i" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+  <img alt="">
+  <p></p>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+  var reduzido = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  /* 1. aberto ou fechado agora, no fuso de Ipatinga, e o dia de hoje no horario */
+  var H = {1:[8,17], 2:[8,17], 3:[8,18], 4:[8,17], 5:[8,17]};
+  var NOMES = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+  var agora;
+  try {
+    var p = {};
+    new Intl.DateTimeFormat("en-US", {timeZone:"America/Sao_Paulo", weekday:"short", hour:"numeric", minute:"numeric", hour12:false})
+      .formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; });
+    agora = { d: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday), h: (parseInt(p.hour,10) % 24) + parseInt(p.minute,10) / 60 };
+  } catch (e) { var n = new Date(); agora = { d: n.getDay(), h: n.getHours() + n.getMinutes() / 60 }; }
+  var st = document.querySelector("[data-status]");
+  if (st && agora.d >= 0) {
+    var hoje = H[agora.d], txt, aberto = false;
+    if (hoje && agora.h >= hoje[0] && agora.h < hoje[1]) { aberto = true; txt = "Aberto agora · até " + hoje[1] + "h"; }
+    else if (hoje && agora.h < hoje[0]) txt = "Abre hoje às " + hoje[0] + "h";
+    else for (var i = 1; i <= 7; i++) { var dd = (agora.d + i) % 7; if (H[dd]) { txt = "Abre " + (i === 1 ? "amanhã" : NOMES[dd]) + " às " + H[dd][0] + "h"; break; } }
+    st.textContent = txt;
+    st.classList.add(aberto ? "status--aberto" : "status--fechado");
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("[data-horas] [data-dia]"), function(el){
+    if (el.getAttribute("data-dia").split(",").indexOf(String(agora.d)) >= 0) el.classList.add("hoje");
+  });
+
+  /* 2. faiscas no toque, nas cores das bolinhas da sala infantil */
+  var CORES = ["#E5B7AE", "#DCC394", "#B5C4A8", "#8FA89B"];
+  var estrela = '<svg viewBox="0 0 24 24"><path d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0z"/></svg>';
+  function faiscas(x, y){
+    if (reduzido) return;
+    for (var k = 0; k < 9; k++) {
+      var f = document.createElement("span"), ang = Math.random() * Math.PI * 2, dist = 30 + Math.random() * 46;
+      f.className = "faisca"; f.innerHTML = estrela;
+      f.style.color = CORES[k % CORES.length];
+      f.style.left = x + "px"; f.style.top = y + "px";
+      f.style.setProperty("--dx", (Math.cos(ang) * dist).toFixed(1) + "px");
+      f.style.setProperty("--dy", (Math.sin(ang) * dist).toFixed(1) + "px");
+      var t = 7 + Math.random() * 9; f.style.width = f.style.height = t + "px";
+      document.body.appendChild(f);
+      setTimeout(function(el){ return function(){ el.remove(); }; }(f), 850);
+    }
+  }
+  document.addEventListener("pointerdown", function(e){
+    if (e.target.closest(".topo, .link")) faiscas(e.clientX, e.clientY);
+  });
+
+  /* 3. faixas de arrastar: o dedo e o trackpad ja rolam; o mouse precisa do arraste.
+     Depois de arrastar, o clique que vem junto nao abre o cartao. */
+  Array.prototype.forEach.call(document.querySelectorAll(".galeria"), function(gal){
+    var arr = null, arrastou = false;
+    gal.addEventListener("dragstart", function(e){ e.preventDefault(); });
+    gal.addEventListener("pointerdown", function(e){
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      arr = { x: e.clientX, s: gal.scrollLeft, moveu: false }; arrastou = false;
+    });
+    gal.addEventListener("pointermove", function(e){
+      if (!arr) return;
+      var dx = e.clientX - arr.x;
+      if (!arr.moveu) { if (Math.abs(dx) < 5) return; arr.moveu = true; gal.classList.add("arrastando"); gal.setPointerCapture(e.pointerId); }
+      gal.scrollLeft = arr.s - dx;
+    });
+    var solta = function(){
+      if (!arr) return;
+      var moveu = arr.moveu, dir = arr.s - gal.scrollLeft < 0 ? 1 : -1; arr = null;
+      if (!moveu) return;
+      arrastou = true;
+      /* para no cartao mais perto, puxado um quarto pro lado do arraste */
+      var base = gal.getBoundingClientRect().left + parseFloat(getComputedStyle(gal).scrollPaddingLeft || 0);
+      var max = gal.scrollWidth - gal.clientWidth, alvo = gal.scrollLeft, mira = gal.scrollLeft + dir * gal.firstElementChild.offsetWidth * .25, melhor = Infinity;
+      Array.prototype.forEach.call(gal.children, function(li){
+        var pos = Math.min(max, Math.max(0, gal.scrollLeft + li.getBoundingClientRect().left - base));
+        if (Math.abs(pos - mira) < melhor) { melhor = Math.abs(pos - mira); alvo = pos; }
+      });
+      gal.scrollTo({ left: alvo, behavior: reduzido ? "auto" : "smooth" });
+      setTimeout(function(){ gal.classList.remove("arrastando"); }, reduzido ? 0 : 450);
+    };
+    gal.addEventListener("pointerup", solta);
+    gal.addEventListener("pointercancel", solta);
+    gal.addEventListener("click", function(e){ if (arrastou) { e.preventDefault(); arrastou = false; } }, true);
+  });
+
+  /* 4. o espaco: a foto abre grande no visor. Sem <dialog> (navegador antigo), abre a imagem */
+  var visor = document.querySelector(".visor");
+  Array.prototype.forEach.call(document.querySelectorAll("[data-grande]"), function(b){
+    b.addEventListener("click", function(){
+      var src = b.getAttribute("data-grande"), alt = b.querySelector("img").alt;
+      if (!visor || typeof visor.showModal !== "function") { location.href = src; return; }
+      var im = visor.querySelector("img"); im.src = src; im.alt = alt;
+      visor.querySelector("p").textContent = alt;
+      visor.showModal();
+    });
+  });
+  if (visor) {
+    visor.querySelector(".visor__fechar").addEventListener("click", function(){ visor.close(); });
+    visor.addEventListener("click", function(e){ if (e.target === visor) visor.close(); });
+  }
+})();
+</script>
+</body>
+</html>
