@@ -8,6 +8,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-WRZ7HY3TYR');
+  // Toque em qualquer link do WhatsApp vira o evento principal contato_whatsapp (04/11/2026)
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+    if (a) gtag('event', 'contato_whatsapp', { link_url: a.href, pagina: location.pathname });
+  });
 </script>
 <!-- Microsoft Clarity (04/11/2026): gravação das visitas e mapa de calor -->
 <script type="text/javascript">
