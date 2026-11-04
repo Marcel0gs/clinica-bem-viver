@@ -209,13 +209,32 @@ button{font:inherit;color:inherit}
 .galeria.arrastando{scroll-snap-type:none;cursor:grabbing}
 @media (min-width:620px){.galeria{margin:0 -20px;padding:2px 20px 8px;scroll-padding-inline:20px}}
 
-/* ---------- o espaco: mosaico, cada foto abre grande ---------- */
-.espaco{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:112px;gap:8px;list-style:none;margin:0;padding:0}
-.espaco li:nth-child(1){grid-row:span 2}
-.espaco li:nth-child(4){grid-column:span 2}
-.foto{display:block;width:100%;height:100%;padding:0;border:0;border-radius:14px;overflow:hidden;background:var(--areia);cursor:zoom-in}
-.foto img{width:100%;height:100%;object-fit:cover;transition:scale .8s var(--suave)}
+/* ---------- o espaco: carrossel, cada foto abre grande ---------- */
+.carrossel{position:relative}
+.carrossel__trilho{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;margin:0 -16px;padding:2px 16px 4px;scrollbar-width:none;list-style:none}
+.carrossel__trilho::-webkit-scrollbar{display:none}
+.carrossel__trilho li{flex:0 0 84%;scroll-snap-align:start}
+@media (min-width:620px){.carrossel__trilho{margin:0 -20px;padding:2px 20px 4px;scroll-padding-inline:20px}}
+.foto{position:relative;isolation:isolate;display:block;width:100%;aspect-ratio:4/5;padding:0;border:0;border-radius:20px;overflow:hidden;background:var(--areia);cursor:zoom-in;box-shadow:0 10px 24px rgba(30,63,59,.14);-webkit-user-drag:none;user-select:none}
+.foto img{width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;transition:scale .8s var(--suave)}
+.foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,48,45,0) 62%,rgba(22,48,45,.7));pointer-events:none}
 .foto:hover img{scale:1.04}
+.foto__leg{position:absolute;left:1rem;bottom:.85rem;z-index:1;color:#fff;font:600 1.08rem/1.2 var(--serif);text-align:left}
+.carrossel__pontos{display:flex;justify-content:center;gap:6px;margin-top:12px}
+.carrossel__pontos i{width:7px;height:7px;border-radius:999px;background:rgba(45,90,85,.22);transition:width .35s var(--suave),background .35s ease}
+.carrossel__pontos i.on{width:22px;background:var(--petroleo)}
+/* setas so pra mouse: no celular o dedo arrasta */
+.carrossel__seta{display:none}
+@media (hover:hover) and (pointer:fine){
+  .carrossel__trilho{cursor:grab}
+  .carrossel__seta{position:absolute;top:calc(50% - 38px);z-index:2;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:0;background:rgba(252,250,246,.92);color:var(--petroleo);box-shadow:0 8px 20px rgba(30,63,59,.2);cursor:pointer;transition:opacity .25s ease,transform .2s ease}
+  .carrossel__seta:hover{transform:scale(1.06)}
+  .carrossel__seta[disabled]{opacity:0;pointer-events:none}
+  .carrossel__seta--ant{left:6px}
+  .carrossel__seta--ant .i{transform:rotate(180deg)}
+  .carrossel__seta--prox{right:6px}
+}
+.carrossel__trilho.arrastando{scroll-snap-type:none;cursor:grabbing}
 .visor{width:min(94vw,560px);max-width:none;max-height:92vh;padding:0;border:0;border-radius:18px;background:transparent;overflow:visible}
 .visor::backdrop{background:rgba(22,48,45,.86)}
 .visor img{width:100%;max-height:82vh;object-fit:contain;border-radius:18px}
@@ -354,24 +373,23 @@ button{font:inherit;color:inherit}
     <li><a class="card" href="../especialidades/nutricao/"><img src="../assets/img/links/esp-card-nutricao.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Nutrição</a></li>
   </ul>
 
-  <h2 class="titulo">Programas</h2>
-  <!-- o cartao do IPD usa a mesma ilustracao do site (turma gerada, alt "Ilustracao"), aprovada por ele em 02/11 -->
-  <ul class="galeria" aria-label="Programas da clínica: cada um abre a página dele no site">
-    <li><a class="card" href="../programas/treinamento-caa/"><img src="../assets/img/links/esp-card-caa.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Treinamento de CAA</a></li>
-    <li><a class="card" href="../programas/ipd/"><img src="../assets/img/links/esp-card-ipd.webp" width="480" height="600" loading="lazy" decoding="async" alt="Ilustração: crianças em atividade de grupo">IPD</a></li>
-    <li><a class="card" href="../programas/envelhecer-em-movimento/"><img src="../assets/img/links/esp-card-envelhecer.webp" width="480" height="600" loading="lazy" decoding="async" alt="">Envelhecer em Movimento</a></li>
-  </ul>
-
   <h2 class="titulo">O espaço</h2>
-  <!-- fotos reais da Carine (02/11/2026). Toque abre a foto grande -->
-  <ul class="espaco">
-    <li><button class="foto" type="button" data-grande="../assets/img/esp-recepcao.webp"><img src="../assets/img/links/local-recepcao.webp" width="600" height="800" loading="lazy" decoding="async" alt="Recepção da clínica"></button></li>
-    <li><button class="foto" type="button" data-grande="../assets/img/esp-espera.webp"><img src="../assets/img/links/local-espera.webp" width="600" height="800" loading="lazy" decoding="async" alt="Sala de espera"></button></li>
-    <li><button class="foto" type="button" data-grande="../assets/img/esp-infantil.webp"><img src="../assets/img/links/local-infantil.webp" width="600" height="800" loading="lazy" decoding="async" alt="Sala de atendimento infantil, com brinquedos"></button></li>
-    <li><button class="foto" type="button" data-grande="../assets/img/esp-consultorio.webp"><img src="../assets/img/links/local-consultorio.webp" width="900" height="560" loading="lazy" decoding="async" alt="Consultório"></button></li>
-    <li><button class="foto" type="button" data-grande="../assets/img/esp-fono.webp"><img src="../assets/img/links/local-fono.webp" width="600" height="600" loading="lazy" decoding="async" alt="Sala de fonoaudiologia"></button></li>
-    <li><button class="foto" type="button" data-grande="../assets/img/esp-fisio.webp"><img src="../assets/img/links/local-fisio.webp" width="600" height="600" loading="lazy" decoding="async" alt="Sala de fisioterapia"></button></li>
-  </ul>
+  <!-- carrossel com as fotos reais da Carine (02/11/2026). Arrasta pro lado; toque abre a foto grande -->
+  <div class="carrossel">
+    <ul class="carrossel__trilho" aria-label="Fotos do espaço da clínica">
+      <li><button class="foto" type="button" data-grande="../assets/img/esp-recepcao.webp"><img src="../assets/img/links/local-recepcao.webp" width="720" height="900" loading="lazy" decoding="async" alt="Recepção da clínica"><span class="foto__leg">Recepção</span></button></li>
+      <li><button class="foto" type="button" data-grande="../assets/img/esp-espera.webp"><img src="../assets/img/links/local-espera.webp" width="720" height="900" loading="lazy" decoding="async" alt="Sala de espera"><span class="foto__leg">Sala de espera</span></button></li>
+      <li><button class="foto" type="button" data-grande="../assets/img/esp-consultorio.webp"><img src="../assets/img/links/local-consultorio.webp" width="720" height="900" loading="lazy" decoding="async" alt="Consultório"><span class="foto__leg">Consultório</span></button></li>
+      <li><button class="foto" type="button" data-grande="../assets/img/esp-infantil.webp"><img src="../assets/img/links/local-infantil.webp" width="720" height="900" loading="lazy" decoding="async" alt="Sala de atendimento infantil, com brinquedos"><span class="foto__leg">Sala infantil</span></button></li>
+      <li><button class="foto" type="button" data-grande="../assets/img/esp-cantinho.webp"><img src="../assets/img/links/local-cantinho.webp" width="720" height="900" loading="lazy" decoding="async" alt="Cantinho das crianças, com mesinha e cadeiras"><span class="foto__leg">Cantinho das crianças</span></button></li>
+      <li><button class="foto" type="button" data-grande="../assets/img/esp-fono.webp"><img src="../assets/img/links/local-fono.webp" width="720" height="900" loading="lazy" decoding="async" alt="Sala de fonoaudiologia"><span class="foto__leg">Fonoaudiologia</span></button></li>
+      <li><button class="foto" type="button" data-grande="../assets/img/esp-atendimento.webp"><img src="../assets/img/links/local-atendimento.webp" width="720" height="900" loading="lazy" decoding="async" alt="Sala de atendimento, com poltrona e estante"><span class="foto__leg">Sala de atendimento</span></button></li>
+      <li><button class="foto" type="button" data-grande="../assets/img/esp-fisio.webp"><img src="../assets/img/links/local-fisio.webp" width="720" height="900" loading="lazy" decoding="async" alt="Sala de fisioterapia"><span class="foto__leg">Fisioterapia</span></button></li>
+    </ul>
+    <button class="carrossel__seta carrossel__seta--ant" type="button" aria-label="Foto anterior"><svg class="i" aria-hidden="true"><use href="#i-dir"/></svg></button>
+    <button class="carrossel__seta carrossel__seta--prox" type="button" aria-label="Próxima foto"><svg class="i" aria-hidden="true"><use href="#i-dir"/></svg></button>
+    <div class="carrossel__pontos" aria-hidden="true"></div>
+  </div>
 
   <h2 class="titulo">Bom saber</h2>
   <div class="info">
@@ -468,7 +486,7 @@ button{font:inherit;color:inherit}
 
   /* 3. faixas de arrastar: o dedo e o trackpad ja rolam; o mouse precisa do arraste.
      Depois de arrastar, o clique que vem junto nao abre o cartao. */
-  Array.prototype.forEach.call(document.querySelectorAll(".galeria"), function(gal){
+  Array.prototype.forEach.call(document.querySelectorAll(".galeria, .carrossel__trilho"), function(gal){
     var arr = null, arrastou = false;
     gal.addEventListener("dragstart", function(e){ e.preventDefault(); });
     gal.addEventListener("pointerdown", function(e){
@@ -501,7 +519,29 @@ button{font:inherit;color:inherit}
     gal.addEventListener("click", function(e){ if (arrastou) { e.preventDefault(); arrastou = false; } }, true);
   });
 
-  /* 4. o espaco: a foto abre grande no visor. Sem <dialog> (navegador antigo), abre a imagem */
+  /* 4. carrossel do espaco: um ponto por foto, o da foto da vez aceso, e setas pro mouse */
+  Array.prototype.forEach.call(document.querySelectorAll(".carrossel"), function(c){
+    var tr = c.querySelector(".carrossel__trilho"), fotos = tr.children, pts = c.querySelector(".carrossel__pontos");
+    var ant = c.querySelector(".carrossel__seta--ant"), prox = c.querySelector(".carrossel__seta--prox");
+    for (var k = 0; k < fotos.length; k++) pts.appendChild(document.createElement("i"));
+    var passo = function(){ return fotos[0].offsetWidth + parseFloat(getComputedStyle(tr).columnGap || 10); };
+    var atual = -1, pedido = false;
+    var marca = function(){
+      pedido = false;
+      var max = tr.scrollWidth - tr.clientWidth;
+      var n = tr.scrollLeft >= max - 4 ? fotos.length - 1 : Math.round(tr.scrollLeft / passo());
+      if (n === atual) return;
+      atual = n;
+      Array.prototype.forEach.call(pts.children, function(p, i){ p.classList.toggle("on", i === n); });
+      ant.disabled = n <= 0; prox.disabled = n >= fotos.length - 1;
+    };
+    tr.addEventListener("scroll", function(){ if (!pedido) { pedido = true; requestAnimationFrame(marca); } }, { passive: true });
+    ant.addEventListener("click", function(){ tr.scrollBy({ left: -passo(), behavior: reduzido ? "auto" : "smooth" }); });
+    prox.addEventListener("click", function(){ tr.scrollBy({ left: passo(), behavior: reduzido ? "auto" : "smooth" }); });
+    marca();
+  });
+
+  /* 5. o espaco: a foto abre grande no visor. Sem <dialog> (navegador antigo), abre a imagem */
   var visor = document.querySelector(".visor");
   Array.prototype.forEach.call(document.querySelectorAll("[data-grande]"), function(b){
     b.addEventListener("click", function(){
